@@ -7,7 +7,7 @@
         <tr>
             <td class="headlabel" colspan="7">Flight Fee Master</td>
         </tr>
-        <tr>
+        <tr>  
             <td class="searchCriterialabel" nowrap>Flight Fee Code</td>
             <td style="width: 30%">
                 <asp:TextBox ID="tcode" runat="server" CssClass="txtFormCell"></asp:TextBox></td>
