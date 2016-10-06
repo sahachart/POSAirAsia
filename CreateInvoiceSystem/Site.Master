@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CreateInvoiceSystem.SiteMaster" %>
 
 <!DOCTYPE html>
-
+<%--test--%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <link href="menu/menu_style.css" rel="stylesheet" />
