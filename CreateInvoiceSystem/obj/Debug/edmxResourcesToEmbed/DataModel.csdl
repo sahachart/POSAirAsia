@@ -1,0 +1,1626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POSINVModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="POSINVEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="M_Country" EntityType="POSINVModel.M_Country" />
+    <EntitySet Name="M_Province" EntityType="POSINVModel.M_Province" />
+    <EntitySet Name="M_FlightType" EntityType="POSINVModel.M_FlightType" />
+    <EntitySet Name="M_Agency" EntityType="POSINVModel.M_Agency" />
+    <EntitySet Name="M_Station" EntityType="POSINVModel.M_Station" />
+    <EntitySet Name="M_CNReason" EntityType="POSINVModel.M_CNReason" />
+    <EntitySet Name="M_PaymentType" EntityType="POSINVModel.M_PaymentType" />
+    <EntitySet Name="M_FlightFee" EntityType="POSINVModel.M_FlightFee" />
+    <EntitySet Name="M_Currency" EntityType="POSINVModel.M_Currency" />
+    <EntitySet Name="T_ABBFARE" EntityType="POSINVModel.T_ABBFARE" />
+    <EntitySet Name="T_ABBPAX" EntityType="POSINVModel.T_ABBPAX" />
+    <EntitySet Name="T_ABBPAYMENTMETHOD" EntityType="POSINVModel.T_ABBPAYMENTMETHOD" />
+    <EntitySet Name="T_LogsGenABB" EntityType="POSINVModel.T_LogsGenABB" />
+    <EntitySet Name="M_POS_Machine" EntityType="POSINVModel.M_POS_Machine" />
+    <EntitySet Name="T_BookingCurrentUpdate" EntityType="POSINVModel.T_BookingCurrentUpdate" />
+    <EntitySet Name="T_BookingServiceChargeCurrentUpdate" EntityType="POSINVModel.T_BookingServiceChargeCurrentUpdate" />
+    <EntitySet Name="T_PassengerFeeCurrentUpdate" EntityType="POSINVModel.T_PassengerFeeCurrentUpdate" />
+    <EntitySet Name="T_PassengerFeeServiceChargeCurrentUpdate" EntityType="POSINVModel.T_PassengerFeeServiceChargeCurrentUpdate" />
+    <EntitySet Name="T_PaxFareCurrentUpdate" EntityType="POSINVModel.T_PaxFareCurrentUpdate" />
+    <EntitySet Name="T_PaymentCurrentUpdate" EntityType="POSINVModel.T_PaymentCurrentUpdate" />
+    <EntitySet Name="T_SegmentCurrentUpdate" EntityType="POSINVModel.T_SegmentCurrentUpdate" />
+    <EntitySet Name="T_Passenger" EntityType="POSINVModel.T_Passenger" />
+    <EntitySet Name="T_Payment" EntityType="POSINVModel.T_Payment" />
+    <EntitySet Name="M_SlipMessageDetails" EntityType="POSINVModel.M_SlipMessageDetails" />
+    <EntitySet Name="rpts" EntityType="POSINVModel.rpt" />
+    <EntitySet Name="T_Booking" EntityType="POSINVModel.T_Booking" />
+    <EntitySet Name="T_BookingServiceCharge" EntityType="POSINVModel.T_BookingServiceCharge" />
+    <EntitySet Name="T_BookingServiceChargeNewItem" EntityType="POSINVModel.T_BookingServiceChargeNewItem" />
+    <EntitySet Name="T_PassengerFee" EntityType="POSINVModel.T_PassengerFee" />
+    <EntitySet Name="T_PassengerFeeNewItem" EntityType="POSINVModel.T_PassengerFeeNewItem" />
+    <EntitySet Name="T_PassengerFeeServiceCharge" EntityType="POSINVModel.T_PassengerFeeServiceCharge" />
+    <EntitySet Name="T_PassengerFeeServiceChargeNewItem" EntityType="POSINVModel.T_PassengerFeeServiceChargeNewItem" />
+    <EntitySet Name="T_PassengerNewItem" EntityType="POSINVModel.T_PassengerNewItem" />
+    <EntitySet Name="T_PaxFare" EntityType="POSINVModel.T_PaxFare" />
+    <EntitySet Name="T_PaxFareNewItem" EntityType="POSINVModel.T_PaxFareNewItem" />
+    <EntitySet Name="T_PaymentNewItem" EntityType="POSINVModel.T_PaymentNewItem" />
+    <EntitySet Name="T_Segment" EntityType="POSINVModel.T_Segment" />
+    <EntitySet Name="T_SegmentNewItem" EntityType="POSINVModel.T_SegmentNewItem" />
+    <EntitySet Name="T_WaitingForManualGenABB" EntityType="POSINVModel.T_WaitingForManualGenABB" />
+    <FunctionImport Name="GenerateInvoiceABBOnDaily" />
+    <FunctionImport Name="Insert_T_ABB">
+      <Parameter Name="TransactionId" Mode="In" Type="Guid" />
+      <Parameter Name="pnrno" Mode="In" Type="String" />
+      <Parameter Name="createby" Mode="In" Type="String" />
+      <Parameter Name="inv" Mode="In" Type="String" />
+      <Parameter Name="paxcountadt" Mode="In" Type="Int32" />
+      <Parameter Name="paxcountchd" Mode="In" Type="Int32" />
+      <Parameter Name="adminfeeth" Mode="In" Type="Decimal" />
+      <Parameter Name="fuelth" Mode="In" Type="Decimal" />
+      <Parameter Name="Serviceth" Mode="In" Type="Decimal" />
+      <Parameter Name="vatth" Mode="In" Type="Decimal" />
+      <Parameter Name="airporttaxth" Mode="In" Type="Decimal" />
+      <Parameter Name="insurth" Mode="In" Type="Decimal" />
+      <Parameter Name="farepriceth" Mode="In" Type="Decimal" />
+      <Parameter Name="otherth" Mode="In" Type="Decimal" />
+      <Parameter Name="repth" Mode="In" Type="Decimal" />
+      <Parameter Name="paymentamtth" Mode="In" Type="Decimal" />
+      <Parameter Name="ExchangeRateth" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="Insert_T_ABB_NewItem">
+      <Parameter Name="TransactionId" Mode="In" Type="Guid" />
+      <Parameter Name="pnrno" Mode="In" Type="String" />
+      <Parameter Name="createby" Mode="In" Type="String" />
+      <Parameter Name="inv" Mode="In" Type="String" />
+      <Parameter Name="paxcountadt" Mode="In" Type="Int32" />
+      <Parameter Name="paxcountchd" Mode="In" Type="Int32" />
+      <Parameter Name="adminfeeth" Mode="In" Type="Decimal" />
+      <Parameter Name="fuelth" Mode="In" Type="Decimal" />
+      <Parameter Name="Serviceth" Mode="In" Type="Decimal" />
+      <Parameter Name="vatth" Mode="In" Type="Decimal" />
+      <Parameter Name="airporttaxth" Mode="In" Type="Decimal" />
+      <Parameter Name="insurth" Mode="In" Type="Decimal" />
+      <Parameter Name="farepriceth" Mode="In" Type="Decimal" />
+      <Parameter Name="otherth" Mode="In" Type="Decimal" />
+      <Parameter Name="repth" Mode="In" Type="Decimal" />
+      <Parameter Name="paymentamtth" Mode="In" Type="Decimal" />
+      <Parameter Name="ExchangeRateth" Mode="In" Type="Decimal" />
+      <Parameter Name="TranExistId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="InsertLogABBGenerate">
+      <Parameter Name="pnrno" Mode="In" Type="String" />
+      <Parameter Name="TransId" Mode="In" Type="Guid" />
+      <Parameter Name="msg" Mode="In" Type="String" />
+      <Parameter Name="createby" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertManualABBGenerate">
+      <Parameter Name="pnrno" Mode="In" Type="String" />
+      <Parameter Name="Msg" Mode="In" Type="String" />
+      <Parameter Name="TransId" Mode="In" Type="Guid" />
+      <Parameter Name="createby" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PrepareTableForBatchJob" />
+    <EntitySet Name="T_PassengerCurrentUpdate" EntityType="POSINVModel.T_PassengerCurrentUpdate" />
+    <FunctionImport Name="GenerateInvoiceABBOnline" ReturnType="Collection(String)">
+      <Parameter Name="pnrno" Mode="In" Type="String" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="posCode" Mode="In" Type="String" />
+      <Parameter Name="stationcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Insert_T_ABB_Online">
+      <Parameter Name="TransactionId" Mode="In" Type="Guid" />
+      <Parameter Name="pnrno" Mode="In" Type="String" />
+      <Parameter Name="createby" Mode="In" Type="String" />
+      <Parameter Name="inv" Mode="In" Type="String" />
+      <Parameter Name="paxcountadt" Mode="In" Type="Int32" />
+      <Parameter Name="paxcountchd" Mode="In" Type="Int32" />
+      <Parameter Name="adminfeeth" Mode="In" Type="Decimal" />
+      <Parameter Name="fuelth" Mode="In" Type="Decimal" />
+      <Parameter Name="Serviceth" Mode="In" Type="Decimal" />
+      <Parameter Name="vatth" Mode="In" Type="Decimal" />
+      <Parameter Name="airporttaxth" Mode="In" Type="Decimal" />
+      <Parameter Name="insurth" Mode="In" Type="Decimal" />
+      <Parameter Name="farepriceth" Mode="In" Type="Decimal" />
+      <Parameter Name="otherth" Mode="In" Type="Decimal" />
+      <Parameter Name="repth" Mode="In" Type="Decimal" />
+      <Parameter Name="paymentamtth" Mode="In" Type="Decimal" />
+      <Parameter Name="ExchangeRateth" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <EntitySet Name="M_EmpPOS" EntityType="POSINVModel.M_EmpPOS" />
+    <EntitySet Name="M_SlipMessage" EntityType="POSINVModel.M_SlipMessage" />
+    <EntitySet Name="M_SendMessage" EntityType="POSINVModel.M_SendMessage" />
+    <EntitySet Name="M_AgencyType" EntityType="POSINVModel.M_AgencyType" />
+    <EntitySet Name="M_VAT" EntityType="POSINVModel.M_VAT" />
+    <EntitySet Name="T_Invoice_Manual" EntityType="POSINVModel.T_Invoice_Manual" />
+    <EntitySet Name="T_Invoice_Seq" EntityType="POSINVModel.T_Invoice_Seq" />
+    <EntitySet Name="M_Menu" EntityType="POSINVModel.M_Menu" />
+    <EntitySet Name="T_LogAccess" EntityType="POSINVModel.T_LogAccess" />
+    <EntitySet Name="M_AppSystem" EntityType="POSINVModel.M_AppSystem" />
+    <EntitySet Name="M_UserGroupMenu" EntityType="POSINVModel.M_UserGroupMenu" />
+    <EntitySet Name="M_UserPermission" EntityType="POSINVModel.M_UserPermission" />
+    <EntitySet Name="T_Invoice_CN" EntityType="POSINVModel.T_Invoice_CN" />
+    <AssociationSet Name="fk_M_CNReason" Association="POSINVModel.fk_M_CNReason">
+      <End Role="M_CNReason" EntitySet="M_CNReason" />
+      <End Role="T_Invoice_CN" EntitySet="T_Invoice_CN" />
+    </AssociationSet>
+    <EntitySet Name="T_LogBookingCurrentUpdate" EntityType="POSINVModel.T_LogBookingCurrentUpdate" />
+    <EntitySet Name="M_Employee" EntityType="POSINVModel.M_Employee" />
+    <EntitySet Name="T_Invoice_Flight" EntityType="POSINVModel.T_Invoice_Flight" />
+    <EntitySet Name="T_Invoice_Detail" EntityType="POSINVModel.T_Invoice_Detail" />
+    <EntitySet Name="T_ABB" EntityType="POSINVModel.T_ABB" />
+    <AssociationSet Name="fk_ABB_POS_Id" Association="POSINVModel.fk_ABB_POS_Id">
+      <End Role="M_POS_Machine" EntitySet="M_POS_Machine" />
+      <End Role="T_ABB" EntitySet="T_ABB" />
+    </AssociationSet>
+    <EntitySet Name="T_Invoice_Fare" EntityType="POSINVModel.T_Invoice_Fare" />
+    <EntitySet Name="T_Invoice_Fee" EntityType="POSINVModel.T_Invoice_Fee" />
+    <EntitySet Name="T_Invoice_Payment" EntityType="POSINVModel.T_Invoice_Payment" />
+    <EntitySet Name="M_FlightFeeGroup" EntityType="POSINVModel.M_FlightFeeGroup" />
+    <AssociationSet Name="FK__M_FlightF__Fligh__76026BA8" Association="POSINVModel.FK__M_FlightF__Fligh__76026BA8">
+      <End Role="M_FlightFeeGroup" EntitySet="M_FlightFeeGroup" />
+      <End Role="M_FlightFee" EntitySet="M_FlightFee" />
+    </AssociationSet>
+    <EntitySet Name="M_Customer" EntityType="POSINVModel.M_Customer" />
+    <EntitySet Name="T_Invoice_Info" EntityType="POSINVModel.T_Invoice_Info" />
+    <AssociationSet Name="fk_M_Customer_ID" Association="POSINVModel.fk_M_Customer_ID">
+      <End Role="M_Customer" EntitySet="M_Customer" />
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PAY_TYPE_ID" Association="POSINVModel.fk_PAY_TYPE_ID">
+      <End Role="M_PaymentType" EntitySet="M_PaymentType" />
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Invoice_Info_INV_ID" Association="POSINVModel.fk_Invoice_Info_INV_ID">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_ABB" EntitySet="T_ABB" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Invoice_CN" Association="POSINVModel.fk_Invoice_CN">
+      <End Role="T_Invoice_CN" EntitySet="T_Invoice_CN" />
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__6B84DD35" Association="POSINVModel.FK__T_Invoice__INV_I__6B84DD35">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Fare" EntitySet="T_Invoice_Fare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__6E6149E0" Association="POSINVModel.FK__T_Invoice__INV_I__6E6149E0">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Fee" EntitySet="T_Invoice_Fee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__65CC03DF" Association="POSINVModel.FK__T_Invoice__INV_I__65CC03DF">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Flight" EntitySet="T_Invoice_Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__68A8708A" Association="POSINVModel.FK__T_Invoice__INV_I__68A8708A">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Payment" EntitySet="T_Invoice_Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__Fligh__1D1C38C9" Association="POSINVModel.FK__T_Invoice__Fligh__1D1C38C9">
+      <End Role="T_Invoice_Flight" EntitySet="T_Invoice_Flight" />
+      <End Role="T_Invoice_Fare" EntitySet="T_Invoice_Fare" />
+    </AssociationSet>
+    <EntitySet Name="M_UserGroupMappingAD" EntityType="POSINVModel.M_UserGroupMappingAD" />
+    <EntitySet Name="M_UserGroup" EntityType="POSINVModel.M_UserGroup" />
+    <AssociationSet Name="fk_Mapping_UserGroupId" Association="POSINVModel.fk_Mapping_UserGroupId">
+      <End Role="M_UserGroup" EntitySet="M_UserGroup" />
+      <End Role="M_UserGroupMappingAD" EntitySet="M_UserGroupMappingAD" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="M_Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" Nullable="false" />
+    <Property Name="IsActive" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Create_By" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_By" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <Property Type="String" Name="CountryCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_Province">
+    <Key>
+      <PropertyRef Name="ProvinceId" />
+    </Key>
+    <Property Type="Int32" Name="ProvinceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ProvinceName" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <Property Type="String" Name="ProvinceCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_FlightType">
+    <Key>
+      <PropertyRef Name="Flight_Type_Id" />
+    </Key>
+    <Property Type="Int32" Name="Flight_Type_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Flight_Type_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Flight_Type_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+  </EntityType>
+  <EntityType Name="M_Agency">
+    <Key>
+      <PropertyRef Name="Agency_Id" />
+    </Key>
+    <Property Type="Int32" Name="Agency_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Agency_Code" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Agency_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <Property Type="String" Name="GenInvoice" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Agency_Type_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_Station">
+    <Key>
+      <PropertyRef Name="Station_Id" />
+    </Key>
+    <Property Type="Int32" Name="Station_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Station_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Station_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <Property Type="String" Name="Location_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ABB_SlipMessage_Id" Type="Int32" />
+    <Property Name="INV_SlipMessage_Id" Type="Int32" />
+    <Property Name="CN_SlipMessage_Id" Type="Int32" />
+    <Property Name="ABB_Print_A4" Type="Boolean" />
+    <Property Name="INV_Print_A4" Type="Boolean" />
+    <Property Name="CN_Print_A4" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="M_CNReason">
+    <Key>
+      <PropertyRef Name="CNReason_Id" />
+    </Key>
+    <Property Type="Int32" Name="CNReason_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CNReason_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CNReason_Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <NavigationProperty Name="T_Invoice_CN" Relationship="POSINVModel.fk_M_CNReason" FromRole="M_CNReason" ToRole="T_Invoice_CN" />
+  </EntityType>
+  <EntityType Name="M_PaymentType">
+    <Key>
+      <PropertyRef Name="PaymentType_Id" />
+    </Key>
+    <Property Type="Int32" Name="PaymentType_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PaymentType_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaymentType_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GenInvoice" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.fk_PAY_TYPE_ID" FromRole="M_PaymentType" ToRole="T_Invoice_Info" />
+  </EntityType>
+  <EntityType Name="M_FlightFee">
+    <Key>
+      <PropertyRef Name="Flight_Fee_Id" />
+    </Key>
+    <Property Type="Int32" Name="Flight_Fee_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Flight_Fee_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Flight_Fee_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DisplayAbb" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <Property Type="String" Name="AbbGroup" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FlightFeeGroup_ID" Type="Guid" />
+    <NavigationProperty Name="M_FlightFeeGroup" Relationship="POSINVModel.FK__M_FlightF__Fligh__76026BA8" FromRole="M_FlightFee" ToRole="M_FlightFeeGroup" />
+  </EntityType>
+  <EntityType Name="M_Currency">
+    <Key>
+      <PropertyRef Name="Currency_Id" />
+    </Key>
+    <Property Type="Int32" Name="Currency_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Currency_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Currency_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ExChangeRate" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_ABBFARE">
+    <Key>
+      <PropertyRef Name="ABBFAREId" />
+    </Key>
+    <Property Type="Guid" Name="ABBFAREId" Nullable="false" />
+    <Property Type="Guid" Name="ABBTid" Nullable="false" />
+    <Property Type="String" Name="PNR_No" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SEQ" Nullable="false" />
+    <Property Type="String" Name="CarrierCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FlightNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DepartureStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ArrivalStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="STD" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="STA" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Amount_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ExchangeRateTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+  </EntityType>
+  <EntityType Name="T_ABBPAX">
+    <Key>
+      <PropertyRef Name="ABBPAXId" />
+    </Key>
+    <Property Type="Guid" Name="ABBPAXId" Nullable="false" />
+    <Property Type="Guid" Name="ABBTid" Nullable="false" />
+    <Property Type="String" Name="PNR_No" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SEQ" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_ABBPAYMENTMETHOD">
+    <Key>
+      <PropertyRef Name="ABBPAYId" />
+    </Key>
+    <Property Type="Guid" Name="ABBPAYId" Nullable="false" />
+    <Property Type="Guid" Name="ABBTid" Nullable="false" />
+    <Property Type="String" Name="PNR_No" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SEQ" Nullable="false" />
+    <Property Type="String" Name="PaymentMethodCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaymentType_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Name="ExchangeRateTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="PaymentAmount_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ApprovalDate" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="AgentCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_LogsGenABB">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Type="Guid" Name="LogId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="String" Name="PNR_No" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Msg" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="M_POS_Machine">
+    <Key>
+      <PropertyRef Name="POS_Id" />
+    </Key>
+    <Property Type="Int32" Name="POS_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="POS_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="POS_MacNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Station_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SlipMessage_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SetEJ" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="CusDisplay" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="CashDrawer" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="FormatPrint" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Last_Inv_No" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_TAX_No" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_Refund_Inv_No" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Active" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="IsActive" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <NavigationProperty Name="T_ABB" Relationship="POSINVModel.fk_ABB_POS_Id" FromRole="M_POS_Machine" ToRole="T_ABB" />
+    <Property Name="Last_AK_No" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Last_QZ_No" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T_BookingCurrentUpdate">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="BookingId" Nullable="false" />
+    <Property Type="DateTime" Name="Load_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="PNR_No" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Booking_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxCount" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="BookingParentID" Nullable="false" />
+    <Property Type="String" Name="ParentRecordLocator" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GroupName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BookingStatus" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TotalCost" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_BookingServiceChargeCurrentUpdate">
+    <Key>
+      <PropertyRef Name="BookingServiceChargeTId" />
+    </Key>
+    <Property Type="Guid" Name="BookingServiceChargeTId" Nullable="false" />
+    <Property Type="Guid" Name="PaxFareTId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SeqmentPaxNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ServiceChargeNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CollectType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TicketCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="BaseAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ChargeDetail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ForeignCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="ForeignAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Name="FareCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="SEQ" Type="Int32" Nullable="false" />
+    <Property Name="QTY" Type="Int32" Nullable="false" />
+    <Property Name="Action" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PassengerFeeTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerFeeTId" Nullable="false" />
+    <Property Type="Guid" Name="PassengerTId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="Int64" Name="PassengerFeeNo" />
+    <Property Type="DateTime" Name="FeeCreateDate" Precision="3" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Name="Action" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeServiceChargeCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PassengerFeeServiceChargeTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerFeeServiceChargeTId" Nullable="false" />
+    <Property Type="Guid" Name="PassengerFeeTId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="Int64" Name="PassengerFeeNo" />
+    <Property Type="DateTime" Name="FeeCreateDate" Precision="3" />
+    <Property Type="String" Name="ServiceChargeNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CollectType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TicketCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BaseCurrencyCode" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="BaseAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ChargeDetail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ForeignCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="ForeignAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Name="SEQ" Type="Int32" Nullable="false" />
+    <Property Name="Action" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PaxFareCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PaxFareTId" />
+    </Key>
+    <Property Type="Guid" Name="PaxFareTId" Nullable="false" />
+    <Property Type="Guid" Name="SegmentTId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SeqmentPaxNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Name="Action" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PaymentCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PaymentTId" />
+    </Key>
+    <Property Type="Guid" Name="PaymentTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="ReferenceType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="String" Name="PaymentMethodType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaymentMethodCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="CollectedCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="CollectedAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="QuotedCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="QuotedAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ParentPaymentID" Nullable="false" />
+    <Property Type="String" Name="AgentCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrganizationCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DomainCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LocationCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ApprovalDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Name="BankName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BranchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountNoID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T_SegmentCurrentUpdate">
+    <Key>
+      <PropertyRef Name="SegmentTId" />
+    </Key>
+    <Property Type="Guid" Name="SegmentTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DepartureStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ArrivalStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="STD" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="STA" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CarrierCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FlightNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Name="Action" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Passenger">
+    <Key>
+      <PropertyRef Name="PassengerTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_Payment">
+    <Key>
+      <PropertyRef Name="PaymentTId" />
+    </Key>
+    <Property Type="Guid" Name="PaymentTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="ReferenceType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="String" Name="PaymentMethodType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaymentMethodCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="CollectedCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="CollectedAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="QuotedCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="QuotedAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ParentPaymentID" Nullable="false" />
+    <Property Type="String" Name="AgentCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrganizationCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DomainCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LocationCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ApprovalDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="M_SlipMessageDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SlipMessage_Id" />
+    <Property Type="String" Name="Descriptions" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortID" />
+    <Property Type="Boolean" Name="SlipStat" />
+    <Property Type="String" Name="Active" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="rpt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="POS_Id" />
+    <Property Type="DateTime" Name="Paydate" Precision="3" />
+    <Property Type="Int32" Name="AmtBill" />
+    <Property Type="Decimal" Name="BVat0" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="BVat7" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="AVat7" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="AirPay" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="PayPrice" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="Dec_Inc" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="T_Booking">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="BookingId" Nullable="false" />
+    <Property Type="DateTime" Name="Load_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="PNR_No" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Booking_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxCount" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="BookingParentID" Nullable="false" />
+    <Property Type="String" Name="ParentRecordLocator" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GroupName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BookingStatus" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TotalCost" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_BookingServiceCharge">
+    <Key>
+      <PropertyRef Name="BookingServiceChargeTId" />
+    </Key>
+    <Property Type="Guid" Name="BookingServiceChargeTId" Nullable="false" />
+    <Property Type="Guid" Name="PaxFareTId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SeqmentPaxNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ServiceChargeNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CollectType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TicketCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="BaseAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ChargeDetail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ForeignCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="ForeignAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_BookingServiceChargeNewItem">
+    <Key>
+      <PropertyRef Name="BookingServiceChargeTId" />
+    </Key>
+    <Property Type="Guid" Name="BookingServiceChargeTId" Nullable="false" />
+    <Property Type="Guid" Name="PaxFareTId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SeqmentPaxNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ServiceChargeNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CollectType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TicketCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="BaseAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ChargeDetail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ForeignCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="ForeignAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PassengerFee">
+    <Key>
+      <PropertyRef Name="PassengerFeeTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerFeeTId" Nullable="false" />
+    <Property Type="Guid" Name="PassengerTId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="Int64" Name="PassengerFeeNo" />
+    <Property Type="DateTime" Name="FeeCreateDate" Precision="3" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeNewItem">
+    <Key>
+      <PropertyRef Name="PassengerFeeTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerFeeTId" Nullable="false" />
+    <Property Type="Guid" Name="PassengerTId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="Int64" Name="PassengerFeeNo" />
+    <Property Type="DateTime" Name="FeeCreateDate" Precision="3" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeServiceCharge">
+    <Key>
+      <PropertyRef Name="PassengerFeeServiceChargeTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerFeeServiceChargeTId" Nullable="false" />
+    <Property Type="Guid" Name="PassengerFeeTId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="Int64" Name="PassengerFeeNo" />
+    <Property Type="DateTime" Name="FeeCreateDate" Precision="3" />
+    <Property Type="String" Name="ServiceChargeNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CollectType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TicketCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BaseCurrencyCode" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="BaseAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ChargeDetail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ForeignCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="ForeignAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeServiceChargeNewItem">
+    <Key>
+      <PropertyRef Name="PassengerFeeServiceChargeTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerFeeServiceChargeTId" Nullable="false" />
+    <Property Type="Guid" Name="PassengerFeeTId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="Int64" Name="PassengerFeeNo" />
+    <Property Type="DateTime" Name="FeeCreateDate" Precision="3" />
+    <Property Type="String" Name="ServiceChargeNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CollectType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ChargeCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TicketCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BaseCurrencyCode" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="BaseAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="ChargeDetail" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ForeignCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="ForeignAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PassengerNewItem">
+    <Key>
+      <PropertyRef Name="PassengerTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PaxFare">
+    <Key>
+      <PropertyRef Name="PaxFareTId" />
+    </Key>
+    <Property Type="Guid" Name="PaxFareTId" Nullable="false" />
+    <Property Type="Guid" Name="SegmentTId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SeqmentPaxNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PaxFareNewItem">
+    <Key>
+      <PropertyRef Name="PaxFareTId" />
+    </Key>
+    <Property Type="Guid" Name="PaxFareTId" Nullable="false" />
+    <Property Type="Guid" Name="SegmentTId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SeqmentPaxNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_PaymentNewItem">
+    <Key>
+      <PropertyRef Name="PaymentTId" />
+    </Key>
+    <Property Type="Guid" Name="PaymentTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="ReferenceType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ReferenceID" Nullable="false" />
+    <Property Type="String" Name="PaymentMethodType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaymentMethodCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="CollectedCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="CollectedAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="QuotedCurrencyCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="QuotedAmount" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="ParentPaymentID" Nullable="false" />
+    <Property Type="String" Name="AgentCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OrganizationCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DomainCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LocationCode" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ApprovalDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_Segment">
+    <Key>
+      <PropertyRef Name="SegmentTId" />
+    </Key>
+    <Property Type="Guid" Name="SegmentTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DepartureStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ArrivalStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="STD" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="STA" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CarrierCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FlightNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_SegmentNewItem">
+    <Key>
+      <PropertyRef Name="SegmentTId" />
+    </Key>
+    <Property Type="Guid" Name="SegmentTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="String" Name="SeqmentNo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DepartureStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ArrivalStation" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="STD" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="STA" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CarrierCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FlightNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_WaitingForManualGenABB">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Type="Guid" Name="LogId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="String" Name="PNR_No" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Msg" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SourceAction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PassengerTId" />
+    </Key>
+    <Property Type="Guid" Name="PassengerTId" Nullable="false" />
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="Int64" Name="PassengerId" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaxType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ABBNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Update_By" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Nullable="false" Precision="3" />
+    <Property Name="Action" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_EmpPOS">
+    <Key>
+      <PropertyRef Name="No" />
+    </Key>
+    <Property Type="Int32" Name="No" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="Int32" Name="PID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_SlipMessage">
+    <Key>
+      <PropertyRef Name="SlipMessage_Id" />
+    </Key>
+    <Property Type="Int32" Name="SlipMessage_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SlipMessage_Code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IsActive" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <Property Type="String" Name="Active" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_SendMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DescMessage" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="ExpireDate" Precision="3" />
+    <Property Type="String" Name="IsActive" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+  </EntityType>
+  <EntityType Name="M_AgencyType">
+    <Key>
+      <PropertyRef Name="AgencyTypeId" />
+    </Key>
+    <Property Type="Int32" Name="AgencyTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Agent_type_code" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Agent_type_Name" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Update_Date" Precision="3" />
+    <Property Type="String" Name="Update_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_Inv_No" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_TAX_No" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_Refund_Inv_No" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="IsActive" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_VAT">
+    <Key>
+      <PropertyRef Name="VAT_CODE" />
+    </Key>
+    <Property Type="String" Name="VAT_CODE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VAT_NAME" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="VAT_VALUE" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="ISACTIVE" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Manual">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+      <PropertyRef Name="Receipt_no" />
+    </Key>
+    <Property Type="Guid" Name="TransactionId" Nullable="false" />
+    <Property Type="String" Name="Receipt_no" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Receipt_type" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="DateTime" Name="Receipt_date" Precision="0" />
+    <Property Type="String" Name="Station_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SlipMessage_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Branch_name" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Branch_address1" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Branch_address2" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Branch_address3" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Branch_Tax_ID" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="POS_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Cashier_no" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Booking_name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Booking_no" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Booking_date" Precision="0" />
+    <Property Type="String" Name="Customer_address1" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Customer_address2" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Customer_address3" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Customer_Tax_ID" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Passenger_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Route" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Create_by" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Update_by" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_date" Precision="3" />
+    <Property Type="DateTime" Name="Update_date" Precision="3" />
+    <Property Type="String" Name="VAT_CODE" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="Vat" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="Net_balance" Precision="18" Scale="4" />
+    <Property Type="String" Name="Payment_type" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Card_no" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Bank" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Document_State" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="Boolean" Name="IsPrint" />
+    <Property Type="Boolean" Name="IsActive" />
+    <Property Name="CN_ID" Type="Guid" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SlipHeader" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Seq">
+    <Key>
+      <PropertyRef Name="Seq_ID" />
+    </Key>
+    <Property Type="Int32" Name="Seq_ID" Nullable="false" />
+    <Property Type="String" Name="Prefix" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Last_Sequence" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="Seq_Number" />
+    <Property Type="String" Name="Curr_Month" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Curr_Year" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Next_Sequence" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_POS_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_Station_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Last_Modify_date" Precision="3" />
+    <Property Type="String" Name="Last_Update_by" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Type="Int32" Name="Menu_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Menu_Code" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Menu_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Menu_Url" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CanView" />
+    <Property Type="Int32" Name="CanInsert" />
+    <Property Type="Int32" Name="CanDelete" />
+    <Property Type="Int32" Name="CanUpdate" />
+    <Property Type="Int32" Name="CanProcess" />
+    <Property Type="Int32" Name="CanPrint" />
+  </EntityType>
+  <EntityType Name="T_LogAccess">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Type="Int64" Name="SessionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="DateTime" Name="TimeStamp" Precision="3" />
+    <Property Type="Int32" Name="Station_Id" />
+    <Property Type="Int32" Name="POS_Id" />
+    <Property Type="Int32" Name="Menu_Id" />
+  </EntityType>
+  <EntityType Name="M_AppSystem">
+    <Key>
+      <PropertyRef Name="HistId" />
+    </Key>
+    <Property Type="Int32" Name="HistId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="LockSystem" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Create_By" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Create_Date" Precision="3" />
+  </EntityType>
+  <EntityType Name="M_UserGroupMenu">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Type="Int32" Name="RowId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserGroupCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Menu_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CanView" />
+    <Property Type="Int32" Name="CanInsert" />
+    <Property Type="Int32" Name="CanDelete" />
+    <Property Type="Int32" Name="CanUpdate" />
+    <Property Type="Int32" Name="CanProcess" />
+    <Property Type="Int32" Name="CanPrint" />
+  </EntityType>
+  <EntityType Name="M_UserPermission">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Type="Int32" Name="RowId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserGroupCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Menu_Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CanView" />
+    <Property Type="Int32" Name="CanInsert" />
+    <Property Type="Int32" Name="CanDelete" />
+    <Property Type="Int32" Name="CanUpdate" />
+    <Property Type="Int32" Name="CanProcess" />
+    <Property Type="Int32" Name="CanPrint" />
+  </EntityType>
+  <EntityType Name="T_Invoice_CN">
+    <Key>
+      <PropertyRef Name="CN_ID" />
+    </Key>
+    <Property Name="CN_ID" Type="Guid" Nullable="false" />
+    <Property Name="TransactionId" Type="Guid" Nullable="false" />
+    <Property Name="INV_No" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PNR_No" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CN_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNReason_Id" Type="Int32" Nullable="false" />
+    <Property Name="CNReason_Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Create_By" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="M_CNReason" Relationship="POSINVModel.fk_M_CNReason" FromRole="T_Invoice_CN" ToRole="M_CNReason" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.fk_Invoice_CN" FromRole="T_Invoice_CN" ToRole="T_Invoice_Info" />
+  </EntityType>
+  <Association Name="fk_M_CNReason">
+    <End Type="POSINVModel.M_CNReason" Role="M_CNReason" Multiplicity="1" />
+    <End Type="POSINVModel.T_Invoice_CN" Role="T_Invoice_CN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_CNReason">
+        <PropertyRef Name="CNReason_Id" />
+      </Principal>
+      <Dependent Role="T_Invoice_CN">
+        <PropertyRef Name="CNReason_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_LogBookingCurrentUpdate">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Guid" Nullable="false" />
+    <Property Name="TransactionId" Type="Guid" Nullable="false" />
+    <Property Name="PNR_No" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Method" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FormName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Create_By" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="INV_No" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="ABBNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ColName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ValueOld" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ValueNew" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_Employee">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Station_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultMenu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsActive" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Create_By" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_By" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <Property Name="Last_POS_ID" Type="Int32" />
+    <Property Name="IP_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastLogIn_Date" Type="DateTime" Precision="3" />
+    <Property Name="IsOnline" Type="Boolean" />
+    <Property Name="IsUserAD" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Flight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="INV_ID" Type="Guid" Nullable="false" />
+    <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ArraivalDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DepartureStation" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ArrivalStation" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CarrierCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FlightNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SEQ" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.FK__T_Invoice__INV_I__65CC03DF" FromRole="T_Invoice_Flight" ToRole="T_Invoice_Info" />
+    <NavigationProperty Name="T_Invoice_Fare" Relationship="POSINVModel.FK__T_Invoice__Fligh__1D1C38C9" FromRole="T_Invoice_Flight" ToRole="T_Invoice_Fare" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Receipt_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Flight_Fee_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Flight_Fee_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="UnitQTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AmountTH" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="T_ABB">
+    <Key>
+      <PropertyRef Name="ABBTid" />
+    </Key>
+    <Property Name="ABBTid" Type="Guid" Nullable="false" />
+    <Property Name="TransactionId" Type="Guid" Nullable="false" />
+    <Property Name="PNR_No" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TaxInvoiceNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PAXCountADT" Type="Int32" Nullable="false" />
+    <Property Name="PAXCountCHD" Type="Int32" Nullable="false" />
+    <Property Name="ADMINFEE" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Fuel" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Service" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="OTHER" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="VAT" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="AIRPORTTAX" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="INSURANCE" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="REP" Type="Decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ExchangeRateTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="PrintCount" Type="Int32" Nullable="false" />
+    <Property Name="STATUS_INV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Create_By" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_By" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Update_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="INV_ID" Type="Guid" />
+    <Property Name="POS_Id" Type="Int32" />
+    <Property Name="Flight_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Flight_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Passenger_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ADMINFEE_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Fuel_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Service_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="OTHER_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="VAT_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="AIRPORTTAX_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="INSURANCE_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="REP_Ori" Type="Decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="TOTAL_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Discount_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <NavigationProperty Name="M_POS_Machine" Relationship="POSINVModel.fk_ABB_POS_Id" FromRole="T_ABB" ToRole="M_POS_Machine" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.fk_Invoice_Info_INV_ID" FromRole="T_ABB" ToRole="T_Invoice_Info" />
+  </EntityType>
+  <Association Name="fk_ABB_POS_Id">
+    <End Type="POSINVModel.M_POS_Machine" Role="M_POS_Machine" Multiplicity="0..1" />
+    <End Type="POSINVModel.T_ABB" Role="T_ABB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_POS_Machine">
+        <PropertyRef Name="POS_Id" />
+      </Principal>
+      <Dependent Role="T_ABB">
+        <PropertyRef Name="POS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_Invoice_Fare">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="INV_ID" Type="Guid" Nullable="false" />
+    <Property Name="Pax_Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ChargeCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Currency" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ExchangeRateTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="DiscountTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="AmountTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="TotalTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Group" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.FK__T_Invoice__INV_I__6B84DD35" FromRole="T_Invoice_Fare" ToRole="T_Invoice_Info" />
+    <Property Name="Flight_ID" Type="Guid" />
+    <NavigationProperty Name="T_Invoice_Flight" Relationship="POSINVModel.FK__T_Invoice__Fligh__1D1C38C9" FromRole="T_Invoice_Fare" ToRole="T_Invoice_Flight" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Fee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="INV_ID" Type="Guid" Nullable="false" />
+    <Property Name="PassengerName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ChargeCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Currency" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ExchangeRateTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="DiscountTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="AmountTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Group" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.FK__T_Invoice__INV_I__6E6149E0" FromRole="T_Invoice_Fee" ToRole="T_Invoice_Info" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="INV_ID" Type="Guid" Nullable="false" />
+    <Property Name="SEQ" Type="Int32" Nullable="false" />
+    <Property Name="PaymentMethodCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentType_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrencyCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ExchangeRateTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="PaymentAmount_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="PaymentAmount" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ApprovalDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AgentCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.FK__T_Invoice__INV_I__68A8708A" FromRole="T_Invoice_Payment" ToRole="T_Invoice_Info" />
+  </EntityType>
+  <EntityType Name="M_FlightFeeGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="NameTH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NameEN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DescriptionTH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DescriptionEN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="M_FlightFee" Relationship="POSINVModel.FK__M_FlightF__Fligh__76026BA8" FromRole="M_FlightFeeGroup" ToRole="M_FlightFee" />
+  </EntityType>
+  <Association Name="FK__M_FlightF__Fligh__76026BA8">
+    <End Type="POSINVModel.M_FlightFeeGroup" Role="M_FlightFeeGroup" Multiplicity="0..1" />
+    <End Type="POSINVModel.M_FlightFee" Role="M_FlightFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_FlightFeeGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="M_FlightFee">
+        <PropertyRef Name="FlightFeeGroup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="M_Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="prfx_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gndr_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Addr_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Addr_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Addr_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Prvn_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Cntr_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zip_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Home_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="crtd_dt" Type="DateTime" Precision="3" />
+    <Property Name="crtd_by" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="last_upd_dt" Type="DateTime" Precision="3" />
+    <Property Name="last_upd_by" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Addr_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerID" Type="Guid" Nullable="false" />
+    <Property Name="Addr_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_No" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_Invoice_Info" Relationship="POSINVModel.fk_M_Customer_ID" FromRole="M_Customer" ToRole="T_Invoice_Info" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Info">
+    <Key>
+      <PropertyRef Name="INV_ID" />
+    </Key>
+    <Property Name="TransactionId" Type="Guid" Nullable="false" />
+    <Property Name="INV_No" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="Ref_INV_No" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="INVDate" Type="DateTime" Precision="3" />
+    <Property Name="Receipt_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Receipt_Date" Type="DateTime" Precision="3" />
+    <Property Name="Booking_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Booking_Date" Type="DateTime" Precision="3" />
+    <Property Name="PayType" Type="Int32" />
+    <Property Name="BankName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BranchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AcountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_Date" Type="DateTime" Precision="3" />
+    <Property Name="INVType" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="VatType" Type="Int32" />
+    <Property Name="Create_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpDate_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="POS_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SlipMessage_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsPrint" Type="Boolean" Nullable="false" />
+    <Property Name="CN_ID" Type="Guid" />
+    <Property Name="IsCancel" Type="Boolean" Nullable="false" />
+    <Property Name="Cancel_Date" Type="DateTime" Precision="3" />
+    <Property Name="OR_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INV_ID" Type="Guid" Nullable="false" />
+    <Property Name="ABB_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerID" Type="Guid" />
+    <Property Name="PAXCountADT" Type="Int32" Nullable="false" />
+    <Property Name="PAXCountCHD" Type="Int32" Nullable="false" />
+    <Property Name="ADMINFEE" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Fuel" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Service" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="OTHER" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="VAT" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="AIRPORTTAX" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="INSURANCE" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="REP" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Discount" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ExchangeRateTH" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ADMINFEE_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Fuel_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Service_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="OTHER_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="VAT_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="AIRPORTTAX_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="INSURANCE_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="REP_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="Discount_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="TOTAL_Ori" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="PassengerName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="M_Customer" Relationship="POSINVModel.fk_M_Customer_ID" FromRole="T_Invoice_Info" ToRole="M_Customer" />
+    <NavigationProperty Name="M_PaymentType" Relationship="POSINVModel.fk_PAY_TYPE_ID" FromRole="T_Invoice_Info" ToRole="M_PaymentType" />
+    <NavigationProperty Name="T_ABB" Relationship="POSINVModel.fk_Invoice_Info_INV_ID" FromRole="T_Invoice_Info" ToRole="T_ABB" />
+    <NavigationProperty Name="T_Invoice_CN" Relationship="POSINVModel.fk_Invoice_CN" FromRole="T_Invoice_Info" ToRole="T_Invoice_CN" />
+    <NavigationProperty Name="T_Invoice_Fare" Relationship="POSINVModel.FK__T_Invoice__INV_I__6B84DD35" FromRole="T_Invoice_Info" ToRole="T_Invoice_Fare" />
+    <NavigationProperty Name="T_Invoice_Fee" Relationship="POSINVModel.FK__T_Invoice__INV_I__6E6149E0" FromRole="T_Invoice_Info" ToRole="T_Invoice_Fee" />
+    <NavigationProperty Name="T_Invoice_Flight" Relationship="POSINVModel.FK__T_Invoice__INV_I__65CC03DF" FromRole="T_Invoice_Info" ToRole="T_Invoice_Flight" />
+    <NavigationProperty Name="T_Invoice_Payment" Relationship="POSINVModel.FK__T_Invoice__INV_I__68A8708A" FromRole="T_Invoice_Info" ToRole="T_Invoice_Payment" />
+  </EntityType>
+  <Association Name="fk_M_Customer_ID">
+    <End Type="POSINVModel.M_Customer" Role="M_Customer" Multiplicity="0..1" />
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Info">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PAY_TYPE_ID">
+    <End Type="POSINVModel.M_PaymentType" Role="M_PaymentType" Multiplicity="0..1" />
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_PaymentType">
+        <PropertyRef Name="PaymentType_Id" />
+      </Principal>
+      <Dependent Role="T_Invoice_Info">
+        <PropertyRef Name="PayType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Invoice_Info_INV_ID">
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="0..1" />
+    <End Type="POSINVModel.T_ABB" Role="T_ABB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_ABB">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Invoice_CN">
+    <End Type="POSINVModel.T_Invoice_CN" Role="T_Invoice_CN" Multiplicity="0..1" />
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_CN">
+        <PropertyRef Name="CN_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Info">
+        <PropertyRef Name="CN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__6B84DD35">
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="1" />
+    <End Type="POSINVModel.T_Invoice_Fare" Role="T_Invoice_Fare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Fare">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__6E6149E0">
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="1" />
+    <End Type="POSINVModel.T_Invoice_Fee" Role="T_Invoice_Fee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Fee">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__65CC03DF">
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="1" />
+    <End Type="POSINVModel.T_Invoice_Flight" Role="T_Invoice_Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Flight">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__68A8708A">
+    <End Type="POSINVModel.T_Invoice_Info" Role="T_Invoice_Info" Multiplicity="1" />
+    <End Type="POSINVModel.T_Invoice_Payment" Role="T_Invoice_Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Payment">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__Fligh__1D1C38C9">
+    <End Type="POSINVModel.T_Invoice_Flight" Role="T_Invoice_Flight" Multiplicity="0..1" />
+    <End Type="POSINVModel.T_Invoice_Fare" Role="T_Invoice_Fare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Flight">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Fare">
+        <PropertyRef Name="Flight_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="M_UserGroupMappingAD">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Guid" Nullable="false" />
+    <Property Name="UserGroupId" Type="Int32" Nullable="false" />
+    <Property Name="AD_Department" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="M_UserGroup" Relationship="POSINVModel.fk_Mapping_UserGroupId" FromRole="M_UserGroupMappingAD" ToRole="M_UserGroup" />
+  </EntityType>
+  <EntityType Name="M_UserGroup">
+    <Key>
+      <PropertyRef Name="UserGroupId" />
+    </Key>
+    <Property Name="UserGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserGroupCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserGroupName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Create_By" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="Update_By" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Update_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="M_UserGroupMappingAD" Relationship="POSINVModel.fk_Mapping_UserGroupId" FromRole="M_UserGroup" ToRole="M_UserGroupMappingAD" />
+  </EntityType>
+  <Association Name="fk_Mapping_UserGroupId">
+    <End Type="POSINVModel.M_UserGroup" Role="M_UserGroup" Multiplicity="1" />
+    <End Type="POSINVModel.M_UserGroupMappingAD" Role="M_UserGroupMappingAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_UserGroup">
+        <PropertyRef Name="UserGroupId" />
+      </Principal>
+      <Dependent Role="M_UserGroupMappingAD">
+        <PropertyRef Name="UserGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

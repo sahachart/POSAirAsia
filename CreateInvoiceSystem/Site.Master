@@ -1,0 +1,449 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CreateInvoiceSystem.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="menu/menu_style.css" rel="stylesheet" />
+    <link href="Content/styles.css" rel="stylesheet" />
+	<style type="text/css">
+	    .fontlabel {
+	  font-family: Tahoma;
+        font-size: 12px;
+        color : white;
+        
+        }
+     body 
+     {
+         overflow: hidden
+     }
+     .txtcalendar {
+        border: 1px solid #e2e2e2;
+        background: #fff;
+        color: #333;
+        font-size: 12px;
+        margin: 5px 0 6px 0;
+        padding: 5px;
+        width: 100px;
+        font-family: Tahoma;
+    }
+     .txtControl {
+        border: 1px solid #e2e2e2;
+        background: #fff;
+        color: #333;
+        font-size: 12px;
+        margin: 5px 0 6px 0;
+        padding: 5px;
+        width: 100%;
+        font-family: Tahoma;
+    }
+    input[type="text"]:disabled.txtcalendar {
+        background: #f3f3f3;
+    }
+    .searchCriteria
+    {
+        width: 90%; margin: 30px; font-family: Tahoma; font-size: 14px;
+    }
+    .headlabel 
+    {
+	    /*border-bottom: thin solid red;*/ 
+        font-weight: bold;
+    }
+    .searchCriterialabel 
+    {
+         padding: 10px;
+         text-wrap: none;
+         width: 200px;
+         text-align: right;
+    }
+    .txtFormCell 
+    {
+
+        display: table-cell;
+        font-family: Tahoma;
+        font-size: 14px;
+        width: 100%
+    
+    }
+    .Nodata 
+    {
+
+        display: table-cell;
+        font-family: Tahoma;
+        font-size: 14px;
+        width: 100%;
+        color: red;
+        font-weight: bold;
+    
+    }
+    .fileUploadDiv
+    {
+        height:30px;
+        overflow:hidden;
+        position:relative;
+    }
+
+    .fileUploadDiv input.fileupload
+    {
+        z-index: 999;
+        line-height: 0;
+        font-size: 50px;
+        position: absolute;
+        top: -2px;
+        left: -700px;
+        opacity: 0;
+        filter: alpha(opacity = 0);
+        -ms-filter: "alpha(opacity=0)";
+        cursor: pointer;
+        _cursor: hand;
+        margin: 0;
+        padding:0;
+    }
+    .GridPager a, .GridPager span
+    {
+        display: block;
+        height: 100%;
+        width: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+    }
+    .GridPager a
+    {
+        background-color: #f5f5f5;
+        color: #969696 !important;
+        border: 1px solid #969696;
+    }
+    .GridPager span
+    {
+        background-color: #A1DCF2;
+        color: #000;
+        border: 1px solid #3AC0F2;
+    }
+    .ui-widget-overlay {
+        position: fixed !important;
+    }
+	</style>
+    <link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/Bootstrap/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body style=" height: 100%; margin: 0px; overflow: auto">
+    <form runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <%--Framework Scripts--%>
+            <asp:ScriptReference Name="MsAjaxBundle" />
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+            <asp:ScriptReference Name="WebFormsBundle" />
+            <%--Site Scripts--%>
+        </Scripts>
+    </asp:ScriptManager>
+        
+    <div id="header" style='width: 100%'>
+<%--        <div style="width: 75%; position:relative; margin:0px auto 0 auto; top:95px;" >
+            <div style="position: absolute; width:100%; border:1px solid red;" >
+                <marquee behavior="scroll" direction="left"><div id="divAdminMsg"></div></marquee>
+            </div>
+        </div>--%>
+        <table cellpadding="0" cellspacing="0" width="100%" >
+            <tr style=" width: 100%; background-color: #D70601">
+                <td>
+                    <img src="Images/airasiatop2.png" />
+                </td>
+                <td valign="middle">
+                   <img src="Images/airasiatop1.png" />
+                </td>
+                <td style=" width: 100%; background-color: #D70601;padding-right: 30px;">
+                    <span style="float: right; text-align: right"><asp:Label ID="Label1" runat="server" CssClass="fontlabel" ></asp:Label>
+                        <br /><asp:Label ID="lbGroupUser" runat="server" CssClass="fontlabel" ></asp:Label>
+                        <br /><asp:Label ID="lbPos" runat="server" CssClass="fontlabel" ></asp:Label>
+                        <br /><asp:Label ID="lbStation" runat="server" CssClass="fontlabel" ></asp:Label>
+                        <br /><asp:Label ID="Label2" runat="server" CssClass="fontlabel" ></asp:Label>
+                    </span>
+                </td>
+             
+            </tr>
+            <tr runat="server" id="trShowmsg" style="height: 18px;"   >
+                <td style="width: 100%; background-color: #D70601; height: 18px;" colspan="3">
+                    <marquee style="height: 18px;"><asp:Label runat="server" ID="LBShowMessage" Font-Names="Tahoma" ForeColor="Yellow" Font-Size="12px"  Font-Bold="true" ></asp:Label></marquee>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #56575B">
+                    <img src="Images/2-2-cut_02.jpg" />
+                </td>
+                <td colspan="2" style=" width: 100%; background-color: #56575B">
+                    <div id='cssmenu' style=" width: 98%; background-color: #56575B">
+                        <ul>
+                           <li><a href='index.aspx'><span>Home</span></a></li>
+                           <li id="importdategrp" runat="server" class='active has-sub'><a href='#'><span>Import Data</span></a>
+                               <ul>
+                                  <li class='has-sub'><a id="importmenu" href="#"><span>Set Time Import</span></a></li>
+                              </ul>
+                           </li>
+                           <li id="bookinggrp" runat="server" class='active has-sub'><a href='#'><span>Booking</span></a>
+                              <ul>
+                                  <li id="bookinginfsub" runat="server" class='has-sub'><a href="bookinginfo.aspx"><span>Booking Information</span></a></li>
+                                  <li id="updatebooksub" runat="server" class='has-sub'><a href="updatebooking.aspx"><span>Update Booking</span></a></li>
+                                  <li id="batchsub" runat="server" class='has-sub'><a href='batchincomplete.aspx'><span>Batch Incomplete</span></a></li>
+                              </ul>
+                           </li>
+                            <li id="invoicegrp" runat="server" class='active has-sub'><a href='#'><span>Invoice</span></a>
+                                <ul>
+                                    <li id="invoicesub" runat="server" class='has-sub'><a href="invoicelist.aspx"><span>Invoice</span></a></li>
+                                    <li id="billsub" runat="server" class='has-sub'><a href="billinvoicelist.aspx"><span>Manual Invoice</span></a></li>
+                                    <li id="refundsub" runat="server" class='active has-sub'><a href='#'><span>Write Off/ Refund</span></a>
+                                        <ul>
+                                            <li id="Li1" runat="server" class='has-sub'><a href="InvoiceCNList.aspx"><span>CN-Invoice</span></a></li>
+                                            <%--<li id="Li2" runat="server" class='has-sub'><a href="InvoiceORList.aspx"><span>OR-Invoice </span></a></li>--%>
+                                            <li id="Li3" runat="server" class='has-sub'><a href="InvoiceCN_M_List.aspx"><span>CN - Manual Invoice</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                           <li id="reportgrp" runat="server" class='active has-sub'><a href='#'><span>Reports</span></a>
+                               <ul style="width: 350px;">
+                                   <li id="rptbymaxsub" runat="server" class='has-sub'><a href="ReportByMachine.aspx?id=1"><span style="text-wrap:normal;">รายงานยอดขาย ตามเครื่องจุดขาย</span></a></li>
+                                   <li id="rpttaxsub" runat="server" class='has-sub'><a href="ReportByMachine.aspx?id=2"><span>รายงานยอดขาย จุดขาย ตามภาษีขาย</span></a></li>
+                                   <li id="rptsumtaxsub" runat="server" class='has-sub'><a href='ReportByMachine.aspx?id=3'><span>รายงานสรุปใบกำกับภาษี</span></a></li>
+                                   <li id="rptabbsub" runat="server" class='has-sub'><a href='ReportByMachine.aspx?id=4'><span>รายงานใบกำกับภาษีอย่างย่อ</span></a></li>
+                                   <%--<li id="rptsubedt" runat="server" class='has-sub'><a href='ReportByMachine.aspx?id=5'><span>รายงานใบกำกับภาษีอย่างย่อ/แก้ไข</span></a></li>--%>
+                                   <li id="rptvalidsub" runat="server" class='has-sub'><a href='ReportByMachine.aspx?id=6'><span>รายงานตรวจสอบใบกำกับภาษีอย่างย่อ</span></a></li>
+                                   <li id="rptbranchsub" runat="server" class='has-sub'><a href='ReportByMachine.aspx?id=7'><span>รายงานยอดขาย ตามวันที่ - สาขา</span></a></li>
+                                   <li id="rptrefundsub" runat="server" class='has-sub'><a href='ReportByMachine.aspx?id=8'><span>รายงานใบลดหนี้</span></a></li>
+                                   <li id="rpteditinvoicesub" runat="server" class='has-sub'><a href='ReportByMachine.aspx?id=9'><span>รายงานการแก้ไข Invoice</span></a></li> 
+                               </ul>
+                           </li>
+                            <li id="masterdatagrp" runat="server" class='active has-sub'><a href='#'><span>Master Data</span></a>
+                                <ul style="width: 250px;">
+                                    <%--<li id="contrysub" runat="server" class='has-sub'><a href="countrymaster.aspx" >Country Master</a></li>
+	            	                <li id="provinsub" runat="server" class='has-sub'><a href="province.aspx" >Province Master</a></li>--%>
+	                                <li id="currsub" runat="server" class='has-sub'><a href="currencymaster.aspx" target="_self" >Currency Exchange</a></li>
+                                    <li id="paysub" runat="server" class='has-sub'><a href='PaymentType.aspx' target="_self" >Payment Type</a></li>
+                                    <li id="stationsub" runat="server" class='has-sub'><a href='Station.aspx' target="_self" >Station</a></li>
+                                    <li id="slipsub" runat="server" class='has-sub'><a href='frmSlipMessage.aspx' target="_self" >Slip Message</a></li>
+                                    <li id="flighttypesub" runat="server" class='has-sub'><a href='FlightType.aspx' target="_self" >Flight Type</a></li>
+                                    <li id="flightfeegroupsub" runat="server" class='has-sub'><a href='FlightFeeGroup.aspx' target="_self" >Upgrade Group</a></li>
+                                    <li id="flightsub" runat="server" class='has-sub'><a href='FlightFee.aspx' target="_self" >Flight Fee</a></li>
+                                    <li id="possub" runat="server" class='has-sub'><a href='posmac.aspx' target="_self" >POS / POS Machine</a></li>
+                                    <li id="agencytypesub" runat="server" class='has-sub'><a href='Agency_Type.aspx' target="_self" >Agency Type</a></li>
+                                    <li id="agencysub" runat="server" class='has-sub'><a href='Agency.aspx' target="_self" >Agency</a></li>
+                                    <li id="cnsub" runat="server" class='has-sub'><a href='cnreason.aspx' target="_self" >CN Reason</a></li>
+                                    <li id="messsub" runat="server" class='has-sub'><a href='SendMasege.aspx' target="_self" >Message From Admin</a></li>
+                                    <li id="cussub" runat="server" class='has-sub'><a href="customerinfo.aspx" target="_self" >Customer Profile</a></li>
+                                </ul>
+                            </li>
+                            <li id="usermanagegrp" runat="server" class='active has-sub'><a href='#'><span>User Managment</span></a>
+                              <ul>
+                                  <li id="usergrpsub" runat="server" class='has-sub'><a href='usergroup.aspx'><span>User Group</span></a></li>
+                                  <li id="usermanagesub" runat="server" class='has-sub'><a href='usermanage.aspx'><span>User Managment</span></a></li>
+                                  <li id="usermonitorsub" runat="server" class='has-sub'><a href='usermonitor.aspx'><span>User Monitoring</span></a></li>
+                              </ul>
+                            </li>
+                           <li class='last'><a onclick="Logout();" href='#'><span>Logout</span></a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="body" style="background-image: url('Images/2-2-cut_04.jpg'); background-repeat: no-repeat;">
+        <table style="height: 685px; width: 100%">
+            <tr><td style="vertical-align: top;">
+ <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        
+                </td></tr>
+        </table>
+       
+    </div>
+    <div id="dialog-import" title="Import File">
+        <table style="width: 100%">
+            <tr>
+                <td style="text-align: right; padding-right: 10px; width: 40%;" nowrap>Time to Import<span style="color:red ">*</span></td>
+                <td style="width: 60%"><asp:TextBox ID="code" runat="server" Width="100px" CssClass="txtcalendar"></asp:TextBox></td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div>&copy; <%: DateTime.Now.Year %></div>
+            <table cellpadding="0" cellspacing="0" width="100%" style=" height: 5px;">
+                <tr><td style="background-color: #D70601""></td></tr>
+            </table>
+        </div>
+    </footer>
+               
+        <asp:Button ID="btn_LogOut" runat="server" Text="Button" OnClick="btn_LogOut_Click" ClientIDMode="Static" />
+
+    </form>
+    <div id="dialogViwer" style="display: none">
+         <iframe id="iframeViwer" src="" scrolling="auto" width="100%" height="95%"></iframe>
+    </div>
+</body>
+    <script type="text/javascript">
+        $(function () {
+            $("#dialog-import").hide();
+            $("#importmenu").click(function () {
+                $.ajax({
+                    url: 'servicepos.asmx/GetTime',
+                    type: "POST",
+                    dataType: "xml",
+                    cache: false,
+                    success: function (data) {
+                        
+                        var content = data.childNodes['0'].childNodes['0'].nodeValue;
+                        var obj = $.parseJSON(content);
+                        $('#code').val(obj[0]);
+
+                        $("#dialog-import").dialog({
+                            resizable: false,
+                            height: 300,
+                            width: 600,
+                            modal: true,
+                            title: 'Time Import',
+                            open: function (event, ui) {
+                                $('.ui-dialog').css('z-index', 103);
+                                $('.ui-widget-overlay').css('z-index', 102);
+                            },
+                            buttons: {
+                                "Save": function () {
+                                    if ($('#code').val() == '') {
+                                        alert('กรุณาระบุเวลา');
+                                        return false;
+                                    }
+                                    if (validateTime($('#code'))) {
+                                
+                                        var msg = '';
+                                        $.ajax({
+                                            url: 'servicepos.asmx/setimporttime',
+                                            type: "POST",
+                                            dataType: "xml",
+                                            cache: false,
+                                            data: {
+                                                'time': $('#code').val()
+                                            },
+                                            success: function (data) {
+                                                if (data.firstChild.textContent == '') {
+                                                    alert('Save Success');
+                                                    $(this).dialog("close");
+                                                }
+                                                else {
+                                                    msg = data.firstChild.textContent;
+                                                    alert(msg);
+                                                }
+
+                                            }
+                                        });
+                                        if (msg == '') {
+                                            $(this).dialog("close");
+                                        }
+                                    }
+                                },
+                                Cancel: function () {
+                                    $(this).dialog("close");
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+           // AdminMessage();
+        });
+
+        function validateTime(x) {
+
+            if (x.val().length == 5) {
+
+                var newreg = /^(([0-1][0-9])|(2[0-3])):[0-5][0-9]$/;
+
+                var first = x.val().split(":")[0];
+                var second = x.val().split(":")[1];
+
+                if (first > 24 || second > 59) {
+                    alert("Invalid time format\n\n The valid format is HH:mm");
+                    
+                }
+
+
+                else if (!newreg.test(x.val())) {
+
+                    alert("Invalid time format\n\n The valid format is HH:mm");
+                    x.focus();
+                }
+
+                return true;
+
+            }
+            else if (x.val() != 0) {
+                alert("Invalid time format\n\n The valid format is HH:mm");
+                x.focus();
+            }
+
+            return false;
+        }
+
+        function openPopupPreview(urltext, title, width, height) {
+            $('#iframeViwer').attr('src', urltext);
+            $("#dialogViwer").dialog({
+                modal: true,
+                width: width,
+                height: height,
+                title: title,
+                resizable: true,
+                open: function (event, ui) {
+                    $('.ui-dialog').css('z-index', 103);
+                    $('.ui-widget-overlay').css('z-index', 102);
+                    $('.ui-dialog-buttonpane').find('button:contains("Close")').addClass('btn btn-default');
+                },
+                close: function (event, ui) {
+                    $('#iframeViwer').attr('src', 'about:blank');
+                },
+                buttons: {
+                    'Close': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        }
+
+        $('#btn_LogOut').hide();
+        function Logout() {
+            $('#btn_LogOut').click();
+        }
+
+
+        //function AdminMessage() {
+        //    $.ajax({
+        //        cache: false,
+        //        asyn: false,
+        //        dataType: "text",
+        //        url: "dataservice.asmx/GetAdminMessage", success: function (result) {
+
+        //            var xmlDoc = jQuery.parseXML(result);
+        //            if (xmlDoc) {
+        //                var nodeName = xmlDoc.documentElement.nodeName;
+        //                var items = xmlDoc.getElementsByTagName(nodeName);
+        //                var msg = items[0].childNodes[0].nodeValue;
+        //                $("#LBShowMessage").html(msg);
+        //            }
+       
+        //        }
+        //    });
+        //}
+    </script>
+</html>

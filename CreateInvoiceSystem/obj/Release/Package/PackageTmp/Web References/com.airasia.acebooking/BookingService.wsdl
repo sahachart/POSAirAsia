@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BookingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="basicHttpBookingService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://acebooking.airasia.com/ACE/BookingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://acebooking.airasia.com/ACE/BookingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://acebooking.airasia.com/ACE/BookingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ACE.Entities" />
+      <xsd:import schemaLocation="https://acebooking.airasia.com/ACE/BookingService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://acebooking.airasia.com/ACE/BookingService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBookingService_AddBookingComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookingComment" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_AddBookingComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookingCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_AddInProcessPaymentToBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInProcessPaymentToBooking" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_AddInProcessPaymentToBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInProcessPaymentToBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_AddPaymentToBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPaymentToBooking" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_AddPaymentToBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPaymentToBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_AssignSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignSeats" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_AssignSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Cancel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cancel" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Cancel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_CancelInProcessPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInProcessPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_CancelInProcessPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInProcessPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Clear_InputMessage">
+    <wsdl:part name="parameters" element="tns:Clear" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Clear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Commit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Commit" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Commit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_FareOverride_InputMessage">
+    <wsdl:part name="parameters" element="tns:FareOverride" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_FareOverride_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FareOverrideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_FindBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindBooking" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_FindBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooking" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingFromState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingFromState" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingFromState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingFromStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetEquipmentProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentProperties" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetEquipmentProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetPaymentFeePrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentFeePrice" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetPaymentFeePrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentFeePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetSeatAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetSeatAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeatAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetSSRAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSSRAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetSSRAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSSRAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetSSRAvailabilityForBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSSRAvailabilityForBooking" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetSSRAvailabilityForBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSSRAvailabilityForBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Sell_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sell" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_Sell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_SendItinerary_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendItinerary" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_SendItinerary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendItineraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UnassignSeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnassignSeats" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UnassignSeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnassignSeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_OverrideFee_InputMessage">
+    <wsdl:part name="parameters" element="tns:OverrideFee" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_OverrideFee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OverrideFeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingStatelessFiltered_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingStatelessFiltered" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingStatelessFiltered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingStatelessFilteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UpdateContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContacts" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UpdateContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingFromStateFiltered_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingFromStateFiltered" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingFromStateFiltered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingFromStateFilteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingPayments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingPayments" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetBookingPayments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookingPaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetRecordLocatorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordLocatorList" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_GetRecordLocatorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordLocatorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UpdatePassengers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassengers" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UpdatePassengers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassengersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UpdateSSR_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSSR" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_UpdateSSR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSSRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_SellMultipleFees_InputMessage">
+    <wsdl:part name="parameters" element="tns:SellMultipleFees" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_SellMultipleFees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SellMultipleFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_CommitStateless_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommitStateless" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_CommitStateless_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommitStatelessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_ResellSSR_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResellSSR" />
+  </wsdl:message>
+  <wsdl:message name="IBookingService_ResellSSR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResellSSRResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBookingService">
+    <wsdl:operation name="AddBookingComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/AddBookingComment" message="tns:IBookingService_AddBookingComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/AddBookingCommentResponse" message="tns:IBookingService_AddBookingComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInProcessPaymentToBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/AddInProcessPaymentToBooking" message="tns:IBookingService_AddInProcessPaymentToBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/AddInProcessPaymentToBookingResponse" message="tns:IBookingService_AddInProcessPaymentToBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPaymentToBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/AddPaymentToBooking" message="tns:IBookingService_AddPaymentToBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/AddPaymentToBookingResponse" message="tns:IBookingService_AddPaymentToBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/AssignSeats" message="tns:IBookingService_AssignSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/AssignSeatsResponse" message="tns:IBookingService_AssignSeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/Cancel" message="tns:IBookingService_Cancel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/CancelResponse" message="tns:IBookingService_Cancel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelInProcessPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/CancelInProcessPayment" message="tns:IBookingService_CancelInProcessPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/CancelInProcessPaymentResponse" message="tns:IBookingService_CancelInProcessPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Clear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/Clear" message="tns:IBookingService_Clear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/ClearResponse" message="tns:IBookingService_Clear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Commit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/Commit" message="tns:IBookingService_Commit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/CommitResponse" message="tns:IBookingService_Commit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FareOverride">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/FareOverride" message="tns:IBookingService_FareOverride_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/FareOverrideResponse" message="tns:IBookingService_FareOverride_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/FindBooking" message="tns:IBookingService_FindBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/FindBookingResponse" message="tns:IBookingService_FindBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetBooking" message="tns:IBookingService_GetBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetBookingResponse" message="tns:IBookingService_GetBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingFromState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetBookingFromState" message="tns:IBookingService_GetBookingFromState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetBookingFromStateResponse" message="tns:IBookingService_GetBookingFromState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentProperties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetEquipmentProperties" message="tns:IBookingService_GetEquipmentProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetEquipmentPropertiesResponse" message="tns:IBookingService_GetEquipmentProperties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentFeePrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetPaymentFeePrice" message="tns:IBookingService_GetPaymentFeePrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetPaymentFeePriceResponse" message="tns:IBookingService_GetPaymentFeePrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatAvailability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetSeatAvailability" message="tns:IBookingService_GetSeatAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetSeatAvailabilityResponse" message="tns:IBookingService_GetSeatAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSSRAvailability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetSSRAvailability" message="tns:IBookingService_GetSSRAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetSSRAvailabilityResponse" message="tns:IBookingService_GetSSRAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSSRAvailabilityForBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetSSRAvailabilityForBooking" message="tns:IBookingService_GetSSRAvailabilityForBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetSSRAvailabilityForBookingResponse" message="tns:IBookingService_GetSSRAvailabilityForBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sell">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/Sell" message="tns:IBookingService_Sell_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/SellResponse" message="tns:IBookingService_Sell_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendItinerary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/SendItinerary" message="tns:IBookingService_SendItinerary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/SendItineraryResponse" message="tns:IBookingService_SendItinerary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnassignSeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/UnassignSeats" message="tns:IBookingService_UnassignSeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/UnassignSeatsResponse" message="tns:IBookingService_UnassignSeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OverrideFee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/OverrideFee" message="tns:IBookingService_OverrideFee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/OverrideFeeResponse" message="tns:IBookingService_OverrideFee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingStatelessFiltered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetBookingStatelessFiltered" message="tns:IBookingService_GetBookingStatelessFiltered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetBookingStatelessFilteredResponse" message="tns:IBookingService_GetBookingStatelessFiltered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/UpdateContacts" message="tns:IBookingService_UpdateContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/UpdateContactsResponse" message="tns:IBookingService_UpdateContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingFromStateFiltered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetBookingFromStateFiltered" message="tns:IBookingService_GetBookingFromStateFiltered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetBookingFromStateFilteredResponse" message="tns:IBookingService_GetBookingFromStateFiltered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingPayments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetBookingPayments" message="tns:IBookingService_GetBookingPayments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetBookingPaymentsResponse" message="tns:IBookingService_GetBookingPayments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordLocatorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/GetRecordLocatorList" message="tns:IBookingService_GetRecordLocatorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/GetRecordLocatorListResponse" message="tns:IBookingService_GetRecordLocatorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/UpdatePassengers" message="tns:IBookingService_UpdatePassengers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/UpdatePassengersResponse" message="tns:IBookingService_UpdatePassengers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSSR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/UpdateSSR" message="tns:IBookingService_UpdateSSR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/UpdateSSRResponse" message="tns:IBookingService_UpdateSSR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SellMultipleFees">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/SellMultipleFees" message="tns:IBookingService_SellMultipleFees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/SellMultipleFeesResponse" message="tns:IBookingService_SellMultipleFees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitStateless">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/CommitStateless" message="tns:IBookingService_CommitStateless_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/CommitStatelessResponse" message="tns:IBookingService_CommitStateless_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResellSSR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookingService/ResellSSR" message="tns:IBookingService_ResellSSR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookingService/ResellSSRResponse" message="tns:IBookingService_ResellSSR_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="basicHttpBookingService" type="tns:IBookingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddBookingComment">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AddBookingComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInProcessPaymentToBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AddInProcessPaymentToBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPaymentToBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AddPaymentToBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignSeats">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AssignSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Cancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInProcessPayment">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/CancelInProcessPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Clear">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Clear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Commit">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Commit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FareOverride">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/FareOverride" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/FindBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingFromState">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingFromState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentProperties">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetEquipmentProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentFeePrice">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetPaymentFeePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatAvailability">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetSeatAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSSRAvailability">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetSSRAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSSRAvailabilityForBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetSSRAvailabilityForBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sell">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Sell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendItinerary">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/SendItinerary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnassignSeats">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UnassignSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideFee">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/OverrideFee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingStatelessFiltered">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingStatelessFiltered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContacts">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UpdateContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingFromStateFiltered">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingFromStateFiltered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingPayments">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordLocatorList">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetRecordLocatorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengers">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UpdatePassengers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSSR">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UpdateSSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellMultipleFees">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/SellMultipleFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitStateless">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/CommitStateless" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellSSR">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/ResellSSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="basicHttpBookingService1" type="tns:IBookingService">
+    <wsp:PolicyReference URI="#basicHttpBookingService1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddBookingComment">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AddBookingComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInProcessPaymentToBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AddInProcessPaymentToBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPaymentToBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AddPaymentToBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignSeats">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/AssignSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Cancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInProcessPayment">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/CancelInProcessPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Clear">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Clear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Commit">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Commit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FareOverride">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/FareOverride" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/FindBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingFromState">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingFromState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentProperties">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetEquipmentProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentFeePrice">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetPaymentFeePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSeatAvailability">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetSeatAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSSRAvailability">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetSSRAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSSRAvailabilityForBooking">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetSSRAvailabilityForBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sell">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/Sell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendItinerary">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/SendItinerary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnassignSeats">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UnassignSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideFee">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/OverrideFee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingStatelessFiltered">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingStatelessFiltered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContacts">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UpdateContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingFromStateFiltered">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingFromStateFiltered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingPayments">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetBookingPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordLocatorList">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/GetRecordLocatorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengers">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UpdatePassengers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSSR">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/UpdateSSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellMultipleFees">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/SellMultipleFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitStateless">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/CommitStateless" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellSSR">
+      <soap:operation soapAction="http://tempuri.org/IBookingService/ResellSSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BookingService">
+    <wsdl:port name="basicHttpBookingService" binding="tns:basicHttpBookingService">
+      <soap:address location="http://win-vf2ibk72ko6/ACE/BookingService.svc" />
+    </wsdl:port>
+    <wsdl:port name="basicHttpBookingService1" binding="tns:basicHttpBookingService1">
+      <soap:address location="https://acebooking.airasia.com/ACE/BookingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

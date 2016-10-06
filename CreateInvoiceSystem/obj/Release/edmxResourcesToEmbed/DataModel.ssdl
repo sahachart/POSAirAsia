@@ -1,0 +1,1600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POSINVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="M_Agency">
+    <Key>
+      <PropertyRef Name="Agency_Id" />
+    </Key>
+    <Property Name="Agency_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Agency_Code" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Agency_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="GenInvoice" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="Agency_Type_Code" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="M_AgencyType">
+    <Key>
+      <PropertyRef Name="AgencyTypeId" />
+    </Key>
+    <Property Name="AgencyTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Agent_type_code" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Agent_type_Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Last_Inv_No" Type="varchar" MaxLength="100" />
+    <Property Name="Last_TAX_No" Type="varchar" MaxLength="100" />
+    <Property Name="Last_Refund_Inv_No" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="M_AppSystem">
+    <Key>
+      <PropertyRef Name="HistId" />
+    </Key>
+    <Property Name="HistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LockSystem" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_CNReason">
+    <Key>
+      <PropertyRef Name="CNReason_Id" />
+    </Key>
+    <Property Name="CNReason_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CNReason_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CNReason_Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_Currency">
+    <Key>
+      <PropertyRef Name="Currency_Id" />
+    </Key>
+    <Property Name="Currency_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Currency_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Currency_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExChangeRate" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="first_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="prfx_name" Type="varchar(max)" />
+    <Property Name="gndr_code" Type="varchar(max)" />
+    <Property Name="Addr_1" Type="nvarchar(max)" />
+    <Property Name="Addr_2" Type="nvarchar(max)" />
+    <Property Name="Addr_3" Type="nvarchar(max)" />
+    <Property Name="Prvn_Code" Type="varchar(max)" />
+    <Property Name="Cntr_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Zip_Code" Type="varchar(max)" />
+    <Property Name="Home_Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="remark" Type="nvarchar(max)" />
+    <Property Name="crtd_dt" Type="datetime" />
+    <Property Name="crtd_by" Type="varchar(max)" />
+    <Property Name="last_upd_dt" Type="datetime" />
+    <Property Name="last_upd_by" Type="varchar(max)" />
+    <Property Name="Addr_4" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="char" MaxLength="1" />
+    <Property Name="TaxID" Type="varchar" MaxLength="20" />
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Addr_5" Type="nvarchar(max)" />
+    <Property Name="Branch_No" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="M_Employee">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCode" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserGroup" Type="varchar" MaxLength="50" />
+    <Property Name="Station_Code" Type="varchar" MaxLength="50" />
+    <Property Name="PID" Type="varchar" MaxLength="50" />
+    <Property Name="DefaultMenu" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="char" MaxLength="1" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="Last_POS_ID" Type="int" />
+    <Property Name="IP_Address" Type="varchar" MaxLength="50" />
+    <Property Name="LastLogIn_Date" Type="datetime" />
+    <Property Name="IsOnline" Type="bit" />
+    <Property Name="IsUserAD" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_EmpPOS">
+    <Key>
+      <PropertyRef Name="No" />
+    </Key>
+    <Property Name="No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="PID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_FlightFee">
+    <Key>
+      <PropertyRef Name="Flight_Fee_Id" />
+    </Key>
+    <Property Name="Flight_Fee_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Flight_Fee_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Flight_Fee_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DisplayAbb" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="AbbGroup" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="FlightFeeGroup_ID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="M_FlightFeeGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NameTH" Type="varchar" MaxLength="255" />
+    <Property Name="NameEN" Type="varchar" MaxLength="255" />
+    <Property Name="DescriptionTH" Type="varchar" MaxLength="255" />
+    <Property Name="DescriptionEN" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="M_FlightType">
+    <Key>
+      <PropertyRef Name="Flight_Type_Id" />
+    </Key>
+    <Property Name="Flight_Type_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Flight_Type_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Flight_Type_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Code" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Menu_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Menu_Url" Type="varchar" MaxLength="100" />
+    <Property Name="CanView" Type="int" />
+    <Property Name="CanInsert" Type="int" />
+    <Property Name="CanDelete" Type="int" />
+    <Property Name="CanUpdate" Type="int" />
+    <Property Name="CanProcess" Type="int" />
+    <Property Name="CanPrint" Type="int" />
+  </EntityType>
+  <EntityType Name="M_PaymentType">
+    <Key>
+      <PropertyRef Name="PaymentType_Id" />
+    </Key>
+    <Property Name="PaymentType_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentType_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentType_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GenInvoice" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_POS_Machine">
+    <Key>
+      <PropertyRef Name="POS_Id" />
+    </Key>
+    <Property Name="POS_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="POS_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="POS_MacNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Station_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SlipMessage_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SetEJ" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CusDisplay" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CashDrawer" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FormatPrint" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Last_Inv_No" Type="varchar" MaxLength="100" />
+    <Property Name="Last_TAX_No" Type="varchar" MaxLength="100" />
+    <Property Name="Last_Refund_Inv_No" Type="varchar" MaxLength="100" />
+    <Property Name="Active" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="Last_AK_No" Type="varchar" MaxLength="100" />
+    <Property Name="Last_QZ_No" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="M_Province">
+    <Key>
+      <PropertyRef Name="ProvinceId" />
+    </Key>
+    <Property Name="ProvinceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvinceCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProvinceName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_SendMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescMessage" Type="nvarchar" MaxLength="100" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="ExpireDate" Type="datetime" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="1" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_SlipMessage">
+    <Key>
+      <PropertyRef Name="SlipMessage_Id" />
+    </Key>
+    <Property Name="SlipMessage_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SlipMessage_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="char" MaxLength="1" />
+    <Property Name="IsActive" Type="char" MaxLength="1" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_SlipMessageDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SlipMessage_Id" Type="int" />
+    <Property Name="Descriptions" Type="nvarchar(max)" />
+    <Property Name="SortID" Type="int" />
+    <Property Name="SlipStat" Type="bit" />
+    <Property Name="Active" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="M_Station">
+    <Key>
+      <PropertyRef Name="Station_Id" />
+    </Key>
+    <Property Name="Station_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Station_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Station_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="ABB_SlipMessage_Id" Type="int" />
+    <Property Name="INV_SlipMessage_Id" Type="int" />
+    <Property Name="CN_SlipMessage_Id" Type="int" />
+    <Property Name="ABB_Print_A4" Type="bit" />
+    <Property Name="INV_Print_A4" Type="bit" />
+    <Property Name="CN_Print_A4" Type="bit" />
+  </EntityType>
+  <EntityType Name="M_UserGroup">
+    <Key>
+      <PropertyRef Name="UserGroupId" />
+    </Key>
+    <Property Name="UserGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserGroupCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserGroupName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" />
+    <Property Name="Update_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="M_UserGroupMappingAD">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserGroupId" Type="int" Nullable="false" />
+    <Property Name="AD_Department" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="M_UserGroupMenu">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserGroupCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Menu_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CanView" Type="int" />
+    <Property Name="CanInsert" Type="int" />
+    <Property Name="CanDelete" Type="int" />
+    <Property Name="CanUpdate" Type="int" />
+    <Property Name="CanProcess" Type="int" />
+    <Property Name="CanPrint" Type="int" />
+  </EntityType>
+  <EntityType Name="M_UserPermission">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserGroupCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Menu_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CanView" Type="int" />
+    <Property Name="CanInsert" Type="int" />
+    <Property Name="CanDelete" Type="int" />
+    <Property Name="CanUpdate" Type="int" />
+    <Property Name="CanProcess" Type="int" />
+    <Property Name="CanPrint" Type="int" />
+  </EntityType>
+  <EntityType Name="M_VAT">
+    <Key>
+      <PropertyRef Name="VAT_CODE" />
+    </Key>
+    <Property Name="VAT_CODE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="VAT_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="VAT_VALUE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ISACTIVE" Type="bit" />
+  </EntityType>
+  <EntityType Name="rpt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="POS_Id" Type="int" />
+    <Property Name="Paydate" Type="datetime" />
+    <Property Name="AmtBill" Type="int" />
+    <Property Name="BVat0" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="BVat7" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="AVat7" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="AirPay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PayPrice" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Dec_Inc" Type="decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="T_ABB">
+    <Key>
+      <PropertyRef Name="ABBTid" />
+    </Key>
+    <Property Name="ABBTid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TaxInvoiceNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PAXCountADT" Type="int" Nullable="false" />
+    <Property Name="PAXCountCHD" Type="int" Nullable="false" />
+    <Property Name="ADMINFEE" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Fuel" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Service" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="OTHER" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="AIRPORTTAX" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="INSURANCE" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="REP" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="TOTAL" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ExchangeRateTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="PrintCount" Type="int" Nullable="false" />
+    <Property Name="STATUS_INV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="INV_ID" Type="uniqueidentifier" />
+    <Property Name="POS_Id" Type="int" />
+    <Property Name="Flight_Code" Type="varchar" MaxLength="100" />
+    <Property Name="Flight_Desc" Type="varchar(max)" />
+    <Property Name="Passenger_Name" Type="nvarchar(max)" />
+    <Property Name="ADMINFEE_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Fuel_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Service_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="OTHER_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="VAT_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="AIRPORTTAX_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="INSURANCE_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="REP_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="TOTAL_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Discount_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_ABBFARE">
+    <Key>
+      <PropertyRef Name="ABBFAREId" />
+    </Key>
+    <Property Name="ABBFAREId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ABBTid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="CarrierCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FlightNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DepartureStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ArrivalStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="STD" Type="datetime" Nullable="false" />
+    <Property Name="STA" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="Amount_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ExchangeRateTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_ABBPAX">
+    <Key>
+      <PropertyRef Name="ABBPAXId" />
+    </Key>
+    <Property Name="ABBPAXId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ABBTid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_ABBPAYMENTMETHOD">
+    <Key>
+      <PropertyRef Name="ABBPAYId" />
+    </Key>
+    <Property Name="ABBPAYId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ABBTid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="PaymentMethodCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaymentType_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="ExchangeRateTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="PaymentAmount_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ApprovalDate" Type="datetime" Nullable="false" />
+    <Property Name="AgentCode" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Booking">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookingId" Type="bigint" Nullable="false" />
+    <Property Name="Load_Date" Type="datetime" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Booking_Date" Type="datetime" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaxCount" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BookingParentID" Type="bigint" Nullable="false" />
+    <Property Name="ParentRecordLocator" Type="varchar" MaxLength="20" />
+    <Property Name="GroupName" Type="varchar" MaxLength="100" />
+    <Property Name="BookingStatus" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TotalCost" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_BookingCurrentUpdate">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookingId" Type="bigint" Nullable="false" />
+    <Property Name="Load_Date" Type="datetime" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Booking_Date" Type="datetime" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaxCount" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BookingParentID" Type="bigint" Nullable="false" />
+    <Property Name="ParentRecordLocator" Type="varchar" MaxLength="20" />
+    <Property Name="GroupName" Type="varchar" MaxLength="100" />
+    <Property Name="BookingStatus" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TotalCost" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_BookingServiceCharge">
+    <Key>
+      <PropertyRef Name="BookingServiceChargeTId" />
+    </Key>
+    <Property Name="BookingServiceChargeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaxFareTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="SeqmentPaxNo" Type="varchar" MaxLength="100" />
+    <Property Name="ServiceChargeNo" Type="varchar" MaxLength="100" />
+    <Property Name="ChargeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CollectType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TicketCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="BaseAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ChargeDetail" Type="varchar" MaxLength="50" />
+    <Property Name="ForeignCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ForeignAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_BookingServiceChargeCurrentUpdate">
+    <Key>
+      <PropertyRef Name="BookingServiceChargeTId" />
+    </Key>
+    <Property Name="BookingServiceChargeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaxFareTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="SeqmentPaxNo" Type="varchar" MaxLength="100" />
+    <Property Name="ServiceChargeNo" Type="varchar" MaxLength="100" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="ChargeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CollectType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TicketCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="BaseAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ChargeDetail" Type="varchar" MaxLength="50" />
+    <Property Name="ForeignCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ForeignAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="FareCreateDate" Type="datetime" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="QTY" Type="int" Nullable="false" />
+    <Property Name="Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_BookingServiceChargeNewItem">
+    <Key>
+      <PropertyRef Name="BookingServiceChargeTId" />
+    </Key>
+    <Property Name="BookingServiceChargeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaxFareTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="SeqmentPaxNo" Type="varchar" MaxLength="100" />
+    <Property Name="ServiceChargeNo" Type="varchar" MaxLength="100" />
+    <Property Name="ChargeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CollectType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TicketCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="BaseAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ChargeDetail" Type="varchar" MaxLength="50" />
+    <Property Name="ForeignCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ForeignAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Invoice_CN">
+    <Key>
+      <PropertyRef Name="CN_ID" />
+    </Key>
+    <Property Name="CN_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="INV_No" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CN_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CNReason_Id" Type="int" Nullable="false" />
+    <Property Name="CNReason_Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Create_By" Type="nvarchar" MaxLength="100" />
+    <Property Name="Create_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Receipt_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Flight_Fee_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Flight_Fee_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Other" Type="nvarchar" MaxLength="100" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="UnitQTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AmountTH" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Fare">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="INV_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Pax_Type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Currency" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ExchangeRateTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="DiscountTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="AmountTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="TotalTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Group" Type="varchar" MaxLength="100" />
+    <Property Name="Flight_ID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Fee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="INV_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Currency" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ExchangeRateTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="DiscountTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="AmountTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Group" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Flight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="INV_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="DepartureDate" Type="datetime" Nullable="false" />
+    <Property Name="ArraivalDate" Type="datetime" Nullable="false" />
+    <Property Name="DepartureStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ArrivalStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CarrierCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FlightNumber" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Info">
+    <Key>
+      <PropertyRef Name="INV_ID" />
+    </Key>
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="INV_No" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="Ref_INV_No" Type="nvarchar" MaxLength="18" />
+    <Property Name="INVDate" Type="datetime" />
+    <Property Name="Receipt_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Receipt_Date" Type="datetime" />
+    <Property Name="Booking_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Booking_Date" Type="datetime" />
+    <Property Name="PayType" Type="int" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="100" />
+    <Property Name="BranchNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AcountNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cheque_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cheque_Date" Type="datetime" />
+    <Property Name="INVType" Type="int" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="250" />
+    <Property Name="VatType" Type="int" />
+    <Property Name="Create_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="Update_Date" Type="datetime" />
+    <Property Name="UpDate_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="POS_Code" Type="varchar" MaxLength="50" />
+    <Property Name="SlipMessage_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsPrint" Type="bit" Nullable="false" />
+    <Property Name="CN_ID" Type="uniqueidentifier" />
+    <Property Name="IsCancel" Type="bit" Nullable="false" />
+    <Property Name="Cancel_Date" Type="datetime" />
+    <Property Name="OR_Reason" Type="nvarchar(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="INV_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ABB_NO" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerID" Type="uniqueidentifier" />
+    <Property Name="PAXCountADT" Type="int" Nullable="false" />
+    <Property Name="PAXCountCHD" Type="int" Nullable="false" />
+    <Property Name="ADMINFEE" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Fuel" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Service" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="OTHER" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="AIRPORTTAX" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="INSURANCE" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="REP" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="TOTAL" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ExchangeRateTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ADMINFEE_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Fuel_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Service_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="OTHER_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="VAT_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="AIRPORTTAX_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="INSURANCE_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="REP_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Discount_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="TOTAL_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="PassengerName" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Manual">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+      <PropertyRef Name="Receipt_no" />
+    </Key>
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Receipt_no" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Receipt_type" Type="nchar" MaxLength="10" />
+    <Property Name="Receipt_date" Type="date" />
+    <Property Name="Station_Code" Type="varchar" MaxLength="50" />
+    <Property Name="SlipMessage_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Branch_name" Type="varchar" MaxLength="255" />
+    <Property Name="Branch_address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Branch_address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Branch_address3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Branch_Tax_ID" Type="varchar" MaxLength="20" />
+    <Property Name="POS_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Cashier_no" Type="varchar" MaxLength="50" />
+    <Property Name="Booking_name" Type="varchar" MaxLength="50" />
+    <Property Name="Booking_no" Type="varchar" MaxLength="50" />
+    <Property Name="Booking_date" Type="date" />
+    <Property Name="Customer_address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Customer_address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Customer_address3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Customer_Tax_ID" Type="varchar" MaxLength="20" />
+    <Property Name="Passenger_name" Type="nvarchar(max)" />
+    <Property Name="Route" Type="varchar(max)" />
+    <Property Name="Remark" Type="varchar(max)" />
+    <Property Name="Create_by" Type="varchar" MaxLength="50" />
+    <Property Name="Update_by" Type="varchar" MaxLength="50" />
+    <Property Name="Create_date" Type="datetime" />
+    <Property Name="Update_date" Type="datetime" />
+    <Property Name="VAT_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Vat" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Net_balance" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Payment_type" Type="nchar" MaxLength="10" />
+    <Property Name="Card_no" Type="varchar" MaxLength="50" />
+    <Property Name="Bank" Type="varchar" MaxLength="50" />
+    <Property Name="Document_State" Type="char" MaxLength="10" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CN_ID" Type="uniqueidentifier" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="SlipHeader" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="INV_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="PaymentMethodCode" Type="varchar" MaxLength="20" />
+    <Property Name="PaymentType_Name" Type="varchar" MaxLength="50" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ExchangeRateTH" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="PaymentAmount_Ori" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="PaymentAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ApprovalDate" Type="datetime" Nullable="false" />
+    <Property Name="AgentCode" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Invoice_Seq">
+    <Key>
+      <PropertyRef Name="Seq_ID" />
+    </Key>
+    <Property Name="Seq_ID" Type="int" Nullable="false" />
+    <Property Name="Prefix" Type="nchar" MaxLength="10" />
+    <Property Name="Last_Sequence" Type="varchar" MaxLength="50" />
+    <Property Name="Seq_Number" Type="bigint" />
+    <Property Name="Curr_Month" Type="nchar" MaxLength="2" />
+    <Property Name="Curr_Year" Type="nchar" MaxLength="2" />
+    <Property Name="Next_Sequence" Type="varchar" MaxLength="50" />
+    <Property Name="Last_POS_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Station_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Modify_date" Type="datetime" />
+    <Property Name="Last_Update_by" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_LogAccess">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Name="SessionId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+    <Property Name="Station_Id" Type="int" />
+    <Property Name="POS_Id" Type="int" />
+    <Property Name="Menu_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="T_LogBookingCurrentUpdate">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Method" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FormName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Msg" Type="nvarchar(max)" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="INV_No" Type="nvarchar" MaxLength="18" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="20" />
+    <Property Name="TableName" Type="varchar" MaxLength="100" />
+    <Property Name="ColName" Type="varchar" MaxLength="100" />
+    <Property Name="ValueOld" Type="varchar(max)" />
+    <Property Name="ValueNew" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="T_LogsGenABB">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Msg" Type="varchar(max)" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Passenger">
+    <Key>
+      <PropertyRef Name="PassengerTId" />
+    </Key>
+    <Property Name="PassengerTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaxType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PassengerTId" />
+    </Key>
+    <Property Name="PassengerTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaxType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFee">
+    <Key>
+      <PropertyRef Name="PassengerFeeTId" />
+    </Key>
+    <Property Name="PassengerFeeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="PassengerFeeNo" Type="bigint" />
+    <Property Name="FeeCreateDate" Type="datetime" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PassengerFeeTId" />
+    </Key>
+    <Property Name="PassengerFeeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="PassengerFeeNo" Type="bigint" />
+    <Property Name="FeeCreateDate" Type="datetime" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeNewItem">
+    <Key>
+      <PropertyRef Name="PassengerFeeTId" />
+    </Key>
+    <Property Name="PassengerFeeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="PassengerFeeNo" Type="bigint" />
+    <Property Name="FeeCreateDate" Type="datetime" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeServiceCharge">
+    <Key>
+      <PropertyRef Name="PassengerFeeServiceChargeTId" />
+    </Key>
+    <Property Name="PassengerFeeServiceChargeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerFeeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="PassengerFeeNo" Type="bigint" />
+    <Property Name="FeeCreateDate" Type="datetime" />
+    <Property Name="ServiceChargeNo" Type="varchar" MaxLength="100" />
+    <Property Name="ChargeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CollectType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TicketCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BaseCurrencyCode" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="BaseAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ChargeDetail" Type="varchar" MaxLength="50" />
+    <Property Name="ForeignCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ForeignAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeServiceChargeCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PassengerFeeServiceChargeTId" />
+    </Key>
+    <Property Name="PassengerFeeServiceChargeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerFeeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="PassengerFeeNo" Type="bigint" />
+    <Property Name="FeeCreateDate" Type="datetime" />
+    <Property Name="ServiceChargeNo" Type="varchar" MaxLength="100" />
+    <Property Name="ChargeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CollectType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TicketCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BaseCurrencyCode" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="BaseAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ChargeDetail" Type="varchar" MaxLength="50" />
+    <Property Name="ForeignCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ForeignAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="SEQ" Type="int" Nullable="false" />
+    <Property Name="Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerFeeServiceChargeNewItem">
+    <Key>
+      <PropertyRef Name="PassengerFeeServiceChargeTId" />
+    </Key>
+    <Property Name="PassengerFeeServiceChargeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerFeeTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="PassengerFeeNo" Type="bigint" />
+    <Property Name="FeeCreateDate" Type="datetime" />
+    <Property Name="ServiceChargeNo" Type="varchar" MaxLength="100" />
+    <Property Name="ChargeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CollectType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChargeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TicketCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BaseCurrencyCode" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="BaseAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ChargeDetail" Type="varchar" MaxLength="50" />
+    <Property Name="ForeignCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ForeignAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PassengerNewItem">
+    <Key>
+      <PropertyRef Name="PassengerTId" />
+    </Key>
+    <Property Name="PassengerTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PassengerId" Type="bigint" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaxType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PaxFare">
+    <Key>
+      <PropertyRef Name="PaxFareTId" />
+    </Key>
+    <Property Name="PaxFareTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SegmentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="SeqmentPaxNo" Type="varchar" MaxLength="100" />
+    <Property Name="PaxType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PaxFareCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PaxFareTId" />
+    </Key>
+    <Property Name="PaxFareTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SegmentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="SeqmentPaxNo" Type="varchar" MaxLength="100" />
+    <Property Name="PaxType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PaxFareNewItem">
+    <Key>
+      <PropertyRef Name="PaxFareTId" />
+    </Key>
+    <Property Name="PaxFareTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SegmentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="SeqmentPaxNo" Type="varchar" MaxLength="100" />
+    <Property Name="PaxType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Payment">
+    <Key>
+      <PropertyRef Name="PaymentTId" />
+    </Key>
+    <Property Name="PaymentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaymentID" Type="bigint" Nullable="false" />
+    <Property Name="ReferenceType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="PaymentMethodType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaymentMethodCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaymentAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="CollectedCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CollectedAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="QuotedCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="QuotedAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParentPaymentID" Type="bigint" Nullable="false" />
+    <Property Name="AgentCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="OrganizationCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DomainCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LocationCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ApprovalDate" Type="datetime" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_PaymentCurrentUpdate">
+    <Key>
+      <PropertyRef Name="PaymentTId" />
+    </Key>
+    <Property Name="PaymentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaymentID" Type="bigint" Nullable="false" />
+    <Property Name="ReferenceType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="PaymentMethodType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaymentMethodCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaymentAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="CollectedCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CollectedAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="QuotedCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="QuotedAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParentPaymentID" Type="bigint" Nullable="false" />
+    <Property Name="AgentCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="OrganizationCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DomainCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LocationCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ApprovalDate" Type="datetime" Nullable="false" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="100" />
+    <Property Name="BranchNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountNoID" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="T_PaymentNewItem">
+    <Key>
+      <PropertyRef Name="PaymentTId" />
+    </Key>
+    <Property Name="PaymentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaymentID" Type="bigint" Nullable="false" />
+    <Property Name="ReferenceType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ReferenceID" Type="bigint" Nullable="false" />
+    <Property Name="PaymentMethodType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaymentMethodCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PaymentAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="CollectedCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CollectedAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="QuotedCurrencyCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="QuotedAmount" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParentPaymentID" Type="bigint" Nullable="false" />
+    <Property Name="AgentCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="OrganizationCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DomainCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LocationCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ApprovalDate" Type="datetime" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Segment">
+    <Key>
+      <PropertyRef Name="SegmentTId" />
+    </Key>
+    <Property Name="SegmentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="DepartureStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ArrivalStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="STD" Type="datetime" Nullable="false" />
+    <Property Name="STA" Type="datetime" Nullable="false" />
+    <Property Name="CarrierCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FlightNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_SegmentCurrentUpdate">
+    <Key>
+      <PropertyRef Name="SegmentTId" />
+    </Key>
+    <Property Name="SegmentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="DepartureStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ArrivalStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="STD" Type="datetime" Nullable="false" />
+    <Property Name="STA" Type="datetime" Nullable="false" />
+    <Property Name="CarrierCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FlightNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ABBNo" Type="varchar" MaxLength="50" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="Action" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_SegmentNewItem">
+    <Key>
+      <PropertyRef Name="SegmentTId" />
+    </Key>
+    <Property Name="SegmentTId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeqmentNo" Type="varchar" MaxLength="100" />
+    <Property Name="DepartureStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ArrivalStation" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="STD" Type="datetime" Nullable="false" />
+    <Property Name="STA" Type="datetime" Nullable="false" />
+    <Property Name="CarrierCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FlightNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_WaitingForManualGenABB">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TransactionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PNR_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Msg" Type="nvarchar(max)" />
+    <Property Name="Create_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Create_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_By" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="SourceAction" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__M_FlightF__Fligh__76026BA8">
+    <End Role="M_FlightFeeGroup" Type="Self.M_FlightFeeGroup" Multiplicity="0..1" />
+    <End Role="M_FlightFee" Type="Self.M_FlightFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_FlightFeeGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="M_FlightFee">
+        <PropertyRef Name="FlightFeeGroup_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__Fligh__1D1C38C9">
+    <End Role="T_Invoice_Flight" Type="Self.T_Invoice_Flight" Multiplicity="0..1" />
+    <End Role="T_Invoice_Fare" Type="Self.T_Invoice_Fare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Flight">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Fare">
+        <PropertyRef Name="Flight_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__65CC03DF">
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="1" />
+    <End Role="T_Invoice_Flight" Type="Self.T_Invoice_Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Flight">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__68A8708A">
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="1" />
+    <End Role="T_Invoice_Payment" Type="Self.T_Invoice_Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Payment">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__6B84DD35">
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="1" />
+    <End Role="T_Invoice_Fare" Type="Self.T_Invoice_Fare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Fare">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__T_Invoice__INV_I__6E6149E0">
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="1" />
+    <End Role="T_Invoice_Fee" Type="Self.T_Invoice_Fee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Fee">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ABB_POS_Id">
+    <End Role="M_POS_Machine" Type="Self.M_POS_Machine" Multiplicity="0..1" />
+    <End Role="T_ABB" Type="Self.T_ABB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_POS_Machine">
+        <PropertyRef Name="POS_Id" />
+      </Principal>
+      <Dependent Role="T_ABB">
+        <PropertyRef Name="POS_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Invoice_CN">
+    <End Role="T_Invoice_CN" Type="Self.T_Invoice_CN" Multiplicity="0..1" />
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_CN">
+        <PropertyRef Name="CN_ID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Info">
+        <PropertyRef Name="CN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Invoice_Info_INV_ID">
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="0..1" />
+    <End Role="T_ABB" Type="Self.T_ABB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Invoice_Info">
+        <PropertyRef Name="INV_ID" />
+      </Principal>
+      <Dependent Role="T_ABB">
+        <PropertyRef Name="INV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_M_CNReason">
+    <End Role="M_CNReason" Type="Self.M_CNReason" Multiplicity="1" />
+    <End Role="T_Invoice_CN" Type="Self.T_Invoice_CN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_CNReason">
+        <PropertyRef Name="CNReason_Id" />
+      </Principal>
+      <Dependent Role="T_Invoice_CN">
+        <PropertyRef Name="CNReason_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_M_Customer_ID">
+    <End Role="M_Customer" Type="Self.M_Customer" Multiplicity="0..1" />
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="T_Invoice_Info">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Mapping_UserGroupId">
+    <End Role="M_UserGroup" Type="Self.M_UserGroup" Multiplicity="1" />
+    <End Role="M_UserGroupMappingAD" Type="Self.M_UserGroupMappingAD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_UserGroup">
+        <PropertyRef Name="UserGroupId" />
+      </Principal>
+      <Dependent Role="M_UserGroupMappingAD">
+        <PropertyRef Name="UserGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PAY_TYPE_ID">
+    <End Role="M_PaymentType" Type="Self.M_PaymentType" Multiplicity="0..1" />
+    <End Role="T_Invoice_Info" Type="Self.T_Invoice_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="M_PaymentType">
+        <PropertyRef Name="PaymentType_Id" />
+      </Principal>
+      <Dependent Role="T_Invoice_Info">
+        <PropertyRef Name="PayType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GenerateInvoiceABBOnDaily" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GenerateInvoiceABBOnline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pnrno" Type="varchar" Mode="In" />
+    <Parameter Name="userid" Type="int" Mode="In" />
+    <Parameter Name="posCode" Type="varchar" Mode="In" />
+    <Parameter Name="stationcode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Insert_T_ABB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TransactionId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="pnrno" Type="varchar" Mode="In" />
+    <Parameter Name="createby" Type="varchar" Mode="In" />
+    <Parameter Name="inv" Type="varchar" Mode="In" />
+    <Parameter Name="paxcountadt" Type="int" Mode="In" />
+    <Parameter Name="paxcountchd" Type="int" Mode="In" />
+    <Parameter Name="adminfeeth" Type="decimal" Mode="In" />
+    <Parameter Name="fuelth" Type="decimal" Mode="In" />
+    <Parameter Name="Serviceth" Type="decimal" Mode="In" />
+    <Parameter Name="vatth" Type="decimal" Mode="In" />
+    <Parameter Name="airporttaxth" Type="decimal" Mode="In" />
+    <Parameter Name="insurth" Type="decimal" Mode="In" />
+    <Parameter Name="farepriceth" Type="decimal" Mode="In" />
+    <Parameter Name="otherth" Type="decimal" Mode="In" />
+    <Parameter Name="repth" Type="decimal" Mode="In" />
+    <Parameter Name="paymentamtth" Type="decimal" Mode="In" />
+    <Parameter Name="ExchangeRateth" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="Insert_T_ABB_NewItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TransactionId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="pnrno" Type="varchar" Mode="In" />
+    <Parameter Name="createby" Type="varchar" Mode="In" />
+    <Parameter Name="inv" Type="varchar" Mode="In" />
+    <Parameter Name="paxcountadt" Type="int" Mode="In" />
+    <Parameter Name="paxcountchd" Type="int" Mode="In" />
+    <Parameter Name="adminfeeth" Type="decimal" Mode="In" />
+    <Parameter Name="fuelth" Type="decimal" Mode="In" />
+    <Parameter Name="Serviceth" Type="decimal" Mode="In" />
+    <Parameter Name="vatth" Type="decimal" Mode="In" />
+    <Parameter Name="airporttaxth" Type="decimal" Mode="In" />
+    <Parameter Name="insurth" Type="decimal" Mode="In" />
+    <Parameter Name="farepriceth" Type="decimal" Mode="In" />
+    <Parameter Name="otherth" Type="decimal" Mode="In" />
+    <Parameter Name="repth" Type="decimal" Mode="In" />
+    <Parameter Name="paymentamtth" Type="decimal" Mode="In" />
+    <Parameter Name="ExchangeRateth" Type="decimal" Mode="In" />
+    <Parameter Name="TranExistId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="Insert_T_ABB_Online" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TransactionId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="pnrno" Type="varchar" Mode="In" />
+    <Parameter Name="createby" Type="varchar" Mode="In" />
+    <Parameter Name="inv" Type="varchar" Mode="In" />
+    <Parameter Name="paxcountadt" Type="int" Mode="In" />
+    <Parameter Name="paxcountchd" Type="int" Mode="In" />
+    <Parameter Name="adminfeeth" Type="decimal" Mode="In" />
+    <Parameter Name="fuelth" Type="decimal" Mode="In" />
+    <Parameter Name="Serviceth" Type="decimal" Mode="In" />
+    <Parameter Name="vatth" Type="decimal" Mode="In" />
+    <Parameter Name="airporttaxth" Type="decimal" Mode="In" />
+    <Parameter Name="insurth" Type="decimal" Mode="In" />
+    <Parameter Name="farepriceth" Type="decimal" Mode="In" />
+    <Parameter Name="otherth" Type="decimal" Mode="In" />
+    <Parameter Name="repth" Type="decimal" Mode="In" />
+    <Parameter Name="paymentamtth" Type="decimal" Mode="In" />
+    <Parameter Name="ExchangeRateth" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="InsertLogABBGenerate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pnrno" Type="varchar" Mode="In" />
+    <Parameter Name="TransId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="msg" Type="varchar(max)" Mode="In" />
+    <Parameter Name="createby" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertManualABBGenerate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pnrno" Type="varchar" Mode="In" />
+    <Parameter Name="Msg" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TransId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="createby" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PrepareTableForBatchJob" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="POSINVModelStoreContainer">
+    <EntitySet Name="M_Agency" EntityType="Self.M_Agency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_AgencyType" EntityType="Self.M_AgencyType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_AppSystem" EntityType="Self.M_AppSystem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_CNReason" EntityType="Self.M_CNReason" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Country" EntityType="Self.M_Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Currency" EntityType="Self.M_Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Customer" EntityType="Self.M_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Employee" EntityType="Self.M_Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_EmpPOS" EntityType="Self.M_EmpPOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_FlightFee" EntityType="Self.M_FlightFee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_FlightFeeGroup" EntityType="Self.M_FlightFeeGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_FlightType" EntityType="Self.M_FlightType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Menu" EntityType="Self.M_Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_PaymentType" EntityType="Self.M_PaymentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_POS_Machine" EntityType="Self.M_POS_Machine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Province" EntityType="Self.M_Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_SendMessage" EntityType="Self.M_SendMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_SlipMessage" EntityType="Self.M_SlipMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_SlipMessageDetails" EntityType="Self.M_SlipMessageDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Station" EntityType="Self.M_Station" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_UserGroup" EntityType="Self.M_UserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_UserGroupMappingAD" EntityType="Self.M_UserGroupMappingAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_UserGroupMenu" EntityType="Self.M_UserGroupMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_UserPermission" EntityType="Self.M_UserPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_VAT" EntityType="Self.M_VAT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rpt" EntityType="Self.rpt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ABB" EntityType="Self.T_ABB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ABBFARE" EntityType="Self.T_ABBFARE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ABBPAX" EntityType="Self.T_ABBPAX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ABBPAYMENTMETHOD" EntityType="Self.T_ABBPAYMENTMETHOD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Booking" EntityType="Self.T_Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_BookingCurrentUpdate" EntityType="Self.T_BookingCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_BookingServiceCharge" EntityType="Self.T_BookingServiceCharge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_BookingServiceChargeCurrentUpdate" EntityType="Self.T_BookingServiceChargeCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_BookingServiceChargeNewItem" EntityType="Self.T_BookingServiceChargeNewItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_CN" EntityType="Self.T_Invoice_CN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Detail" EntityType="Self.T_Invoice_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Fare" EntityType="Self.T_Invoice_Fare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Fee" EntityType="Self.T_Invoice_Fee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Flight" EntityType="Self.T_Invoice_Flight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Info" EntityType="Self.T_Invoice_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Manual" EntityType="Self.T_Invoice_Manual" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Payment" EntityType="Self.T_Invoice_Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Invoice_Seq" EntityType="Self.T_Invoice_Seq" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_LogAccess" EntityType="Self.T_LogAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_LogBookingCurrentUpdate" EntityType="Self.T_LogBookingCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_LogsGenABB" EntityType="Self.T_LogsGenABB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Passenger" EntityType="Self.T_Passenger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerCurrentUpdate" EntityType="Self.T_PassengerCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerFee" EntityType="Self.T_PassengerFee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerFeeCurrentUpdate" EntityType="Self.T_PassengerFeeCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerFeeNewItem" EntityType="Self.T_PassengerFeeNewItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerFeeServiceCharge" EntityType="Self.T_PassengerFeeServiceCharge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerFeeServiceChargeCurrentUpdate" EntityType="Self.T_PassengerFeeServiceChargeCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerFeeServiceChargeNewItem" EntityType="Self.T_PassengerFeeServiceChargeNewItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PassengerNewItem" EntityType="Self.T_PassengerNewItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PaxFare" EntityType="Self.T_PaxFare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PaxFareCurrentUpdate" EntityType="Self.T_PaxFareCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PaxFareNewItem" EntityType="Self.T_PaxFareNewItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Payment" EntityType="Self.T_Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PaymentCurrentUpdate" EntityType="Self.T_PaymentCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PaymentNewItem" EntityType="Self.T_PaymentNewItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Segment" EntityType="Self.T_Segment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_SegmentCurrentUpdate" EntityType="Self.T_SegmentCurrentUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_SegmentNewItem" EntityType="Self.T_SegmentNewItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_WaitingForManualGenABB" EntityType="Self.T_WaitingForManualGenABB" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__M_FlightF__Fligh__76026BA8" Association="Self.FK__M_FlightF__Fligh__76026BA8">
+      <End Role="M_FlightFeeGroup" EntitySet="M_FlightFeeGroup" />
+      <End Role="M_FlightFee" EntitySet="M_FlightFee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__Fligh__1D1C38C9" Association="Self.FK__T_Invoice__Fligh__1D1C38C9">
+      <End Role="T_Invoice_Flight" EntitySet="T_Invoice_Flight" />
+      <End Role="T_Invoice_Fare" EntitySet="T_Invoice_Fare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__65CC03DF" Association="Self.FK__T_Invoice__INV_I__65CC03DF">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Flight" EntitySet="T_Invoice_Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__68A8708A" Association="Self.FK__T_Invoice__INV_I__68A8708A">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Payment" EntitySet="T_Invoice_Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__6B84DD35" Association="Self.FK__T_Invoice__INV_I__6B84DD35">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Fare" EntitySet="T_Invoice_Fare" />
+    </AssociationSet>
+    <AssociationSet Name="FK__T_Invoice__INV_I__6E6149E0" Association="Self.FK__T_Invoice__INV_I__6E6149E0">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_Invoice_Fee" EntitySet="T_Invoice_Fee" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ABB_POS_Id" Association="Self.fk_ABB_POS_Id">
+      <End Role="M_POS_Machine" EntitySet="M_POS_Machine" />
+      <End Role="T_ABB" EntitySet="T_ABB" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Invoice_CN" Association="Self.fk_Invoice_CN">
+      <End Role="T_Invoice_CN" EntitySet="T_Invoice_CN" />
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Invoice_Info_INV_ID" Association="Self.fk_Invoice_Info_INV_ID">
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+      <End Role="T_ABB" EntitySet="T_ABB" />
+    </AssociationSet>
+    <AssociationSet Name="fk_M_CNReason" Association="Self.fk_M_CNReason">
+      <End Role="M_CNReason" EntitySet="M_CNReason" />
+      <End Role="T_Invoice_CN" EntitySet="T_Invoice_CN" />
+    </AssociationSet>
+    <AssociationSet Name="fk_M_Customer_ID" Association="Self.fk_M_Customer_ID">
+      <End Role="M_Customer" EntitySet="M_Customer" />
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Mapping_UserGroupId" Association="Self.fk_Mapping_UserGroupId">
+      <End Role="M_UserGroup" EntitySet="M_UserGroup" />
+      <End Role="M_UserGroupMappingAD" EntitySet="M_UserGroupMappingAD" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PAY_TYPE_ID" Association="Self.fk_PAY_TYPE_ID">
+      <End Role="M_PaymentType" EntitySet="M_PaymentType" />
+      <End Role="T_Invoice_Info" EntitySet="T_Invoice_Info" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c05309981a6d4f22a8e55cef49fc0e74" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="POSINVModel.M_Country" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSINVModel.M_Province" Width="1.5" PointX="2.625" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.M_FlightType" Width="1.5" PointX="15.25" PointY="2.75" />
+        <EntityTypeShape EntityType="POSINVModel.M_Agency" Width="1.5" PointX="11" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.M_Station" Width="1.5" PointX="0.5" PointY="8.25" />
+        <EntityTypeShape EntityType="POSINVModel.M_CNReason" Width="1.5" PointX="13.125" PointY="4" />
+        <EntityTypeShape EntityType="POSINVModel.M_PaymentType" Width="1.5" PointX="17.375" PointY="3.625" />
+        <EntityTypeShape EntityType="POSINVModel.M_FlightFee" Width="1.5" PointX="10.875" PointY="3.875" />
+        <EntityTypeShape EntityType="POSINVModel.M_Currency" Width="1.5" PointX="17.375" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.T_ABBFARE" Width="1.5" PointX="2.875" PointY="14.25" />
+        <EntityTypeShape EntityType="POSINVModel.T_ABBPAX" Width="1.5" PointX="17.125" PointY="19.125" />
+        <EntityTypeShape EntityType="POSINVModel.T_ABBPAYMENTMETHOD" Width="1.5" PointX="13.75" PointY="28.75" />
+        <EntityTypeShape EntityType="POSINVModel.T_LogsGenABB" Width="1.5" PointX="6.875" PointY="14.875" />
+        <EntityTypeShape EntityType="POSINVModel.M_POS_Machine" Width="1.5" PointX="0.5" PointY="3.375" />
+        <EntityTypeShape EntityType="POSINVModel.T_BookingCurrentUpdate" Width="1.5" PointX="13.25" PointY="18.625" />
+        <EntityTypeShape EntityType="POSINVModel.T_BookingServiceChargeCurrentUpdate" Width="1.5" PointX="9.8030528639457426" PointY="28.617612270925946" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerFeeCurrentUpdate" Width="2.5" PointX="5.125" PointY="14.5" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerFeeServiceChargeCurrentUpdate" Width="1.5" PointX="15.125" PointY="14" />
+        <EntityTypeShape EntityType="POSINVModel.T_PaxFareCurrentUpdate" Width="1.5" PointX="5" PointY="28.625" />
+        <EntityTypeShape EntityType="POSINVModel.T_PaymentCurrentUpdate" Width="1.5" PointX="7.25" PointY="19.5" />
+        <EntityTypeShape EntityType="POSINVModel.T_SegmentCurrentUpdate" Width="1.5" PointX="14.75" PointY="15" />
+        <EntityTypeShape EntityType="POSINVModel.T_Passenger" Width="1.5" PointX="0.5" PointY="13" />
+        <EntityTypeShape EntityType="POSINVModel.T_Payment" Width="1.5" PointX="0.13048576383408428" PointY="21.797356034534683" />
+        <EntityTypeShape EntityType="POSINVModel.M_SlipMessageDetails" Width="1.5" PointX="2.625" PointY="8.375" />
+        <EntityTypeShape EntityType="POSINVModel.rpt" Width="1.5" PointX="15.375" PointY="24.875" />
+        <EntityTypeShape EntityType="POSINVModel.T_Booking" Width="1.5" PointX="9.25" PointY="17.625" />
+        <EntityTypeShape EntityType="POSINVModel.T_BookingServiceCharge" Width="1.5" PointX="15.75" PointY="14.25" />
+        <EntityTypeShape EntityType="POSINVModel.T_BookingServiceChargeNewItem" Width="1.5" PointX="7.3835342914720687" PointY="25.145635929492133" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerFee" Width="1.5" PointX="11.625" PointY="18.25" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerFeeNewItem" Width="1.5" PointX="21.75" PointY="14.25" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerFeeServiceCharge" Width="1.5" PointX="1.6796490017695582" PointY="24.52282526740936" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerFeeServiceChargeNewItem" Width="1.5" PointX="17.875" PointY="22.75" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerNewItem" Width="1.5" PointX="19.25" PointY="14.375" />
+        <EntityTypeShape EntityType="POSINVModel.T_PaxFare" Width="1.5" PointX="5.875" PointY="15.875" />
+        <EntityTypeShape EntityType="POSINVModel.T_PaxFareNewItem" Width="1.5" PointX="1.25" PointY="30.25" />
+        <EntityTypeShape EntityType="POSINVModel.T_PaymentNewItem" Width="1.5" PointX="19.625" PointY="17.875" />
+        <EntityTypeShape EntityType="POSINVModel.T_Segment" Width="1.5" PointX="17.375" PointY="14.375" />
+        <EntityTypeShape EntityType="POSINVModel.T_SegmentNewItem" Width="1.5" PointX="11" PointY="14.75" />
+        <EntityTypeShape EntityType="POSINVModel.T_WaitingForManualGenABB" Width="1.5" PointX="3.875" PointY="23" />
+        <EntityTypeShape EntityType="POSINVModel.T_PassengerCurrentUpdate" Width="1.5" PointX="5" PointY="19.625" />
+        <EntityTypeShape EntityType="POSINVModel.M_EmpPOS" Width="1.5" PointX="2.625" PointY="3.5" />
+        <EntityTypeShape EntityType="POSINVModel.M_SlipMessage" Width="1.5" PointX="4.625" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.M_SendMessage" Width="1.5" PointX="6.625" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.M_AgencyType" Width="1.5" PointX="13" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.M_VAT" Width="1.5" PointX="8.75" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Manual" Width="1.5" PointX="11.125" PointY="22.125" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Seq" Width="1.5" PointX="0.78358097224663048" PointY="31.8294058590333" />
+        <EntityTypeShape EntityType="POSINVModel.M_Menu" Width="1.5" PointX="8.75" PointY="3.5" />
+        <EntityTypeShape EntityType="POSINVModel.T_LogAccess" Width="1.5" PointX="18.75" PointY="16.125" />
+        <EntityTypeShape EntityType="POSINVModel.M_AppSystem" Width="1.5" PointX="15.25" PointY="0.5" />
+        <EntityTypeShape EntityType="POSINVModel.M_UserGroupMenu" Width="1.75" PointX="6.5" PointY="6.625" />
+        <EntityTypeShape EntityType="POSINVModel.M_UserPermission" Width="1.5" PointX="6.625" PointY="3.5" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_CN" Width="1.5" PointX="13.25" PointY="14.125" />
+        <AssociationConnector Association="POSINVModel.fk_M_CNReason" />
+        <EntityTypeShape EntityType="POSINVModel.T_LogBookingCurrentUpdate" Width="1.5" PointX="14.375" PointY="21" />
+        <EntityTypeShape EntityType="POSINVModel.M_Employee" Width="1.5" PointX="4.625" PointY="3.5" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Flight" Width="1.5" PointX="26.875" PointY="6" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Detail" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="POSINVModel.T_ABB" Width="1.5" PointX="29.875" PointY="4.875" />
+        <AssociationConnector Association="POSINVModel.fk_ABB_POS_Id" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Fare" Width="1.5" PointX="26.875" PointY="1.625" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Fee" Width="1.5" PointX="26.875" PointY="13.875" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Payment" Width="1.5" PointX="26.875" PointY="18.875" />
+        <EntityTypeShape EntityType="POSINVModel.M_FlightFeeGroup" Width="1.5" PointX="8.625" PointY="11.5" />
+        <AssociationConnector Association="POSINVModel.FK__M_FlightF__Fligh__76026BA8" />
+        <EntityTypeShape EntityType="POSINVModel.M_Customer" Width="1.5" PointX="19.375" PointY="1.125" />
+        <EntityTypeShape EntityType="POSINVModel.T_Invoice_Info" Width="1.5" PointX="21.625" PointY="0.75" />
+        <AssociationConnector Association="POSINVModel.fk_M_Customer_ID" />
+        <AssociationConnector Association="POSINVModel.fk_PAY_TYPE_ID" />
+        <AssociationConnector Association="POSINVModel.fk_Invoice_Info_INV_ID" />
+        <AssociationConnector Association="POSINVModel.fk_Invoice_CN" />
+        <AssociationConnector Association="POSINVModel.FK__T_Invoice__INV_I__6B84DD35" />
+        <AssociationConnector Association="POSINVModel.FK__T_Invoice__INV_I__6E6149E0" />
+        <AssociationConnector Association="POSINVModel.FK__T_Invoice__INV_I__65CC03DF" />
+        <AssociationConnector Association="POSINVModel.FK__T_Invoice__INV_I__68A8708A" />
+        <AssociationConnector Association="POSINVModel.FK__T_Invoice__Fligh__1D1C38C9" />
+        <EntityTypeShape EntityType="POSINVModel.M_UserGroupMappingAD" Width="1.5" PointX="4.875" PointY="10.875" />
+        <EntityTypeShape EntityType="POSINVModel.M_UserGroup" Width="1.5" PointX="2.625" PointY="5.5" />
+        <AssociationConnector Association="POSINVModel.fk_Mapping_UserGroupId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

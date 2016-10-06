@@ -1,0 +1,1321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="POSINVModelStoreContainer" CdmEntityContainer="POSINVEntities">
+    <EntitySetMapping Name="M_Country">
+      <EntityTypeMapping TypeName="POSINVModel.M_Country">
+        <MappingFragment StoreEntitySet="M_Country">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Province">
+      <EntityTypeMapping TypeName="POSINVModel.M_Province">
+        <MappingFragment StoreEntitySet="M_Province">
+          <ScalarProperty Name="ProvinceCode" ColumnName="ProvinceCode" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_FlightType">
+      <EntityTypeMapping TypeName="POSINVModel.M_FlightType">
+        <MappingFragment StoreEntitySet="M_FlightType">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Flight_Type_Name" ColumnName="Flight_Type_Name" />
+          <ScalarProperty Name="Flight_Type_Code" ColumnName="Flight_Type_Code" />
+          <ScalarProperty Name="Flight_Type_Id" ColumnName="Flight_Type_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Agency">
+      <EntityTypeMapping TypeName="POSINVModel.M_Agency">
+        <MappingFragment StoreEntitySet="M_Agency">
+          <ScalarProperty Name="Agency_Type_Code" ColumnName="Agency_Type_Code" />
+          <ScalarProperty Name="GenInvoice" ColumnName="GenInvoice" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Agency_Name" ColumnName="Agency_Name" />
+          <ScalarProperty Name="Agency_Code" ColumnName="Agency_Code" />
+          <ScalarProperty Name="Agency_Id" ColumnName="Agency_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Station">
+      <EntityTypeMapping TypeName="POSINVModel.M_Station">
+        <MappingFragment StoreEntitySet="M_Station">
+          <ScalarProperty Name="CN_Print_A4" ColumnName="CN_Print_A4" />
+          <ScalarProperty Name="INV_Print_A4" ColumnName="INV_Print_A4" />
+          <ScalarProperty Name="ABB_Print_A4" ColumnName="ABB_Print_A4" />
+          <ScalarProperty Name="CN_SlipMessage_Id" ColumnName="CN_SlipMessage_Id" />
+          <ScalarProperty Name="INV_SlipMessage_Id" ColumnName="INV_SlipMessage_Id" />
+          <ScalarProperty Name="ABB_SlipMessage_Id" ColumnName="ABB_SlipMessage_Id" />
+          <ScalarProperty Name="Location_Name" ColumnName="Location_Name" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Station_Name" ColumnName="Station_Name" />
+          <ScalarProperty Name="Station_Code" ColumnName="Station_Code" />
+          <ScalarProperty Name="Station_Id" ColumnName="Station_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_CNReason">
+      <EntityTypeMapping TypeName="POSINVModel.M_CNReason">
+        <MappingFragment StoreEntitySet="M_CNReason">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CNReason_Name" ColumnName="CNReason_Name" />
+          <ScalarProperty Name="CNReason_Code" ColumnName="CNReason_Code" />
+          <ScalarProperty Name="CNReason_Id" ColumnName="CNReason_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_PaymentType">
+      <EntityTypeMapping TypeName="POSINVModel.M_PaymentType">
+        <MappingFragment StoreEntitySet="M_PaymentType">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="GenInvoice" ColumnName="GenInvoice" />
+          <ScalarProperty Name="PaymentType_Name" ColumnName="PaymentType_Name" />
+          <ScalarProperty Name="PaymentType_Code" ColumnName="PaymentType_Code" />
+          <ScalarProperty Name="PaymentType_Id" ColumnName="PaymentType_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_FlightFee">
+      <EntityTypeMapping TypeName="POSINVModel.M_FlightFee">
+        <MappingFragment StoreEntitySet="M_FlightFee">
+          <ScalarProperty Name="FlightFeeGroup_ID" ColumnName="FlightFeeGroup_ID" />
+          <ScalarProperty Name="AbbGroup" ColumnName="AbbGroup" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DisplayAbb" ColumnName="DisplayAbb" />
+          <ScalarProperty Name="Flight_Fee_Name" ColumnName="Flight_Fee_Name" />
+          <ScalarProperty Name="Flight_Fee_Code" ColumnName="Flight_Fee_Code" />
+          <ScalarProperty Name="Flight_Fee_Id" ColumnName="Flight_Fee_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Currency">
+      <EntityTypeMapping TypeName="POSINVModel.M_Currency">
+        <MappingFragment StoreEntitySet="M_Currency">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ExChangeRate" ColumnName="ExChangeRate" />
+          <ScalarProperty Name="Currency_Name" ColumnName="Currency_Name" />
+          <ScalarProperty Name="Currency_Code" ColumnName="Currency_Code" />
+          <ScalarProperty Name="Currency_Id" ColumnName="Currency_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ABBFARE">
+      <EntityTypeMapping TypeName="POSINVModel.T_ABBFARE">
+        <MappingFragment StoreEntitySet="T_ABBFARE">
+          <ScalarProperty Name="ExchangeRateTH" ColumnName="ExchangeRateTH" />
+          <ScalarProperty Name="Amount_Ori" ColumnName="Amount_Ori" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="STA" ColumnName="STA" />
+          <ScalarProperty Name="STD" ColumnName="STD" />
+          <ScalarProperty Name="ArrivalStation" ColumnName="ArrivalStation" />
+          <ScalarProperty Name="DepartureStation" ColumnName="DepartureStation" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="ABBTid" ColumnName="ABBTid" />
+          <ScalarProperty Name="ABBFAREId" ColumnName="ABBFAREId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ABBPAX">
+      <EntityTypeMapping TypeName="POSINVModel.T_ABBPAX">
+        <MappingFragment StoreEntitySet="T_ABBPAX">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="ABBTid" ColumnName="ABBTid" />
+          <ScalarProperty Name="ABBPAXId" ColumnName="ABBPAXId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ABBPAYMENTMETHOD">
+      <EntityTypeMapping TypeName="POSINVModel.T_ABBPAYMENTMETHOD">
+        <MappingFragment StoreEntitySet="T_ABBPAYMENTMETHOD">
+          <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+          <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+          <ScalarProperty Name="PaymentAmount_Ori" ColumnName="PaymentAmount_Ori" />
+          <ScalarProperty Name="ExchangeRateTH" ColumnName="ExchangeRateTH" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="PaymentType_Name" ColumnName="PaymentType_Name" />
+          <ScalarProperty Name="PaymentMethodCode" ColumnName="PaymentMethodCode" />
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="ABBTid" ColumnName="ABBTid" />
+          <ScalarProperty Name="ABBPAYId" ColumnName="ABBPAYId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_LogsGenABB">
+      <EntityTypeMapping TypeName="POSINVModel.T_LogsGenABB">
+        <MappingFragment StoreEntitySet="T_LogsGenABB">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_POS_Machine">
+      <EntityTypeMapping TypeName="POSINVModel.M_POS_Machine">
+        <MappingFragment StoreEntitySet="M_POS_Machine">
+          <ScalarProperty Name="Last_QZ_No" ColumnName="Last_QZ_No" />
+          <ScalarProperty Name="Last_AK_No" ColumnName="Last_AK_No" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Last_Refund_Inv_No" ColumnName="Last_Refund_Inv_No" />
+          <ScalarProperty Name="Last_TAX_No" ColumnName="Last_TAX_No" />
+          <ScalarProperty Name="Last_Inv_No" ColumnName="Last_Inv_No" />
+          <ScalarProperty Name="FormatPrint" ColumnName="FormatPrint" />
+          <ScalarProperty Name="CashDrawer" ColumnName="CashDrawer" />
+          <ScalarProperty Name="CusDisplay" ColumnName="CusDisplay" />
+          <ScalarProperty Name="SetEJ" ColumnName="SetEJ" />
+          <ScalarProperty Name="SlipMessage_Code" ColumnName="SlipMessage_Code" />
+          <ScalarProperty Name="Station_Code" ColumnName="Station_Code" />
+          <ScalarProperty Name="POS_MacNo" ColumnName="POS_MacNo" />
+          <ScalarProperty Name="POS_Code" ColumnName="POS_Code" />
+          <ScalarProperty Name="POS_Id" ColumnName="POS_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BookingCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_BookingCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_BookingCurrentUpdate">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="BookingStatus" ColumnName="BookingStatus" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ParentRecordLocator" ColumnName="ParentRecordLocator" />
+          <ScalarProperty Name="BookingParentID" ColumnName="BookingParentID" />
+          <ScalarProperty Name="PaxCount" ColumnName="PaxCount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Booking_Date" ColumnName="Booking_Date" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="Load_Date" ColumnName="Load_Date" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BookingServiceChargeCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_BookingServiceChargeCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_BookingServiceChargeCurrentUpdate">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="QTY" ColumnName="QTY" />
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="FareCreateDate" ColumnName="FareCreateDate" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="ForeignAmount" ColumnName="ForeignAmount" />
+          <ScalarProperty Name="ForeignCurrencyCode" ColumnName="ForeignCurrencyCode" />
+          <ScalarProperty Name="ChargeDetail" ColumnName="ChargeDetail" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="CollectType" ColumnName="CollectType" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="ServiceChargeNo" ColumnName="ServiceChargeNo" />
+          <ScalarProperty Name="SeqmentPaxNo" ColumnName="SeqmentPaxNo" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="PaxFareTId" ColumnName="PaxFareTId" />
+          <ScalarProperty Name="BookingServiceChargeTId" ColumnName="BookingServiceChargeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PassengerFeeCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerFeeCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_PassengerFeeCurrentUpdate">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="FeeCreateDate" ColumnName="FeeCreateDate" />
+          <ScalarProperty Name="PassengerFeeNo" ColumnName="PassengerFeeNo" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="PassengerTId" ColumnName="PassengerTId" />
+          <ScalarProperty Name="PassengerFeeTId" ColumnName="PassengerFeeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PassengerFeeServiceChargeCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerFeeServiceChargeCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_PassengerFeeServiceChargeCurrentUpdate">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="ForeignAmount" ColumnName="ForeignAmount" />
+          <ScalarProperty Name="ForeignCurrencyCode" ColumnName="ForeignCurrencyCode" />
+          <ScalarProperty Name="ChargeDetail" ColumnName="ChargeDetail" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="BaseCurrencyCode" ColumnName="BaseCurrencyCode" />
+          <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="CollectType" ColumnName="CollectType" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="ServiceChargeNo" ColumnName="ServiceChargeNo" />
+          <ScalarProperty Name="FeeCreateDate" ColumnName="FeeCreateDate" />
+          <ScalarProperty Name="PassengerFeeNo" ColumnName="PassengerFeeNo" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="PassengerFeeTId" ColumnName="PassengerFeeTId" />
+          <ScalarProperty Name="PassengerFeeServiceChargeTId" ColumnName="PassengerFeeServiceChargeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PaxFareCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_PaxFareCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_PaxFareCurrentUpdate">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+          <ScalarProperty Name="SeqmentPaxNo" ColumnName="SeqmentPaxNo" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="SegmentTId" ColumnName="SegmentTId" />
+          <ScalarProperty Name="PaxFareTId" ColumnName="PaxFareTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PaymentCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_PaymentCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_PaymentCurrentUpdate">
+          <ScalarProperty Name="AccountNoID" ColumnName="AccountNoID" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="DomainCode" ColumnName="DomainCode" />
+          <ScalarProperty Name="OrganizationCode" ColumnName="OrganizationCode" />
+          <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+          <ScalarProperty Name="ParentPaymentID" ColumnName="ParentPaymentID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="QuotedAmount" ColumnName="QuotedAmount" />
+          <ScalarProperty Name="QuotedCurrencyCode" ColumnName="QuotedCurrencyCode" />
+          <ScalarProperty Name="CollectedAmount" ColumnName="CollectedAmount" />
+          <ScalarProperty Name="CollectedCurrencyCode" ColumnName="CollectedCurrencyCode" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="PaymentMethodCode" ColumnName="PaymentMethodCode" />
+          <ScalarProperty Name="PaymentMethodType" ColumnName="PaymentMethodType" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="ReferenceType" ColumnName="ReferenceType" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PaymentTId" ColumnName="PaymentTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SegmentCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_SegmentCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_SegmentCurrentUpdate">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+          <ScalarProperty Name="STA" ColumnName="STA" />
+          <ScalarProperty Name="STD" ColumnName="STD" />
+          <ScalarProperty Name="ArrivalStation" ColumnName="ArrivalStation" />
+          <ScalarProperty Name="DepartureStation" ColumnName="DepartureStation" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="SegmentTId" ColumnName="SegmentTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Passenger">
+      <EntityTypeMapping TypeName="POSINVModel.T_Passenger">
+        <MappingFragment StoreEntitySet="T_Passenger">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PassengerTId" ColumnName="PassengerTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Payment">
+      <EntityTypeMapping TypeName="POSINVModel.T_Payment">
+        <MappingFragment StoreEntitySet="T_Payment">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="DomainCode" ColumnName="DomainCode" />
+          <ScalarProperty Name="OrganizationCode" ColumnName="OrganizationCode" />
+          <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+          <ScalarProperty Name="ParentPaymentID" ColumnName="ParentPaymentID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="QuotedAmount" ColumnName="QuotedAmount" />
+          <ScalarProperty Name="QuotedCurrencyCode" ColumnName="QuotedCurrencyCode" />
+          <ScalarProperty Name="CollectedAmount" ColumnName="CollectedAmount" />
+          <ScalarProperty Name="CollectedCurrencyCode" ColumnName="CollectedCurrencyCode" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="PaymentMethodCode" ColumnName="PaymentMethodCode" />
+          <ScalarProperty Name="PaymentMethodType" ColumnName="PaymentMethodType" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="ReferenceType" ColumnName="ReferenceType" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PaymentTId" ColumnName="PaymentTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_SlipMessageDetails">
+      <EntityTypeMapping TypeName="POSINVModel.M_SlipMessageDetails">
+        <MappingFragment StoreEntitySet="M_SlipMessageDetails">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SlipStat" ColumnName="SlipStat" />
+          <ScalarProperty Name="SortID" ColumnName="SortID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="SlipMessage_Id" ColumnName="SlipMessage_Id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rpts">
+      <EntityTypeMapping TypeName="POSINVModel.rpt">
+        <MappingFragment StoreEntitySet="rpt">
+          <ScalarProperty Name="Dec_Inc" ColumnName="Dec_Inc" />
+          <ScalarProperty Name="PayPrice" ColumnName="PayPrice" />
+          <ScalarProperty Name="AirPay" ColumnName="AirPay" />
+          <ScalarProperty Name="AVat7" ColumnName="AVat7" />
+          <ScalarProperty Name="BVat7" ColumnName="BVat7" />
+          <ScalarProperty Name="BVat0" ColumnName="BVat0" />
+          <ScalarProperty Name="AmtBill" ColumnName="AmtBill" />
+          <ScalarProperty Name="Paydate" ColumnName="Paydate" />
+          <ScalarProperty Name="POS_Id" ColumnName="POS_Id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Booking">
+      <EntityTypeMapping TypeName="POSINVModel.T_Booking">
+        <MappingFragment StoreEntitySet="T_Booking">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="BookingStatus" ColumnName="BookingStatus" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ParentRecordLocator" ColumnName="ParentRecordLocator" />
+          <ScalarProperty Name="BookingParentID" ColumnName="BookingParentID" />
+          <ScalarProperty Name="PaxCount" ColumnName="PaxCount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Booking_Date" ColumnName="Booking_Date" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="Load_Date" ColumnName="Load_Date" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BookingServiceCharge">
+      <EntityTypeMapping TypeName="POSINVModel.T_BookingServiceCharge">
+        <MappingFragment StoreEntitySet="T_BookingServiceCharge">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ForeignAmount" ColumnName="ForeignAmount" />
+          <ScalarProperty Name="ForeignCurrencyCode" ColumnName="ForeignCurrencyCode" />
+          <ScalarProperty Name="ChargeDetail" ColumnName="ChargeDetail" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="CollectType" ColumnName="CollectType" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="ServiceChargeNo" ColumnName="ServiceChargeNo" />
+          <ScalarProperty Name="SeqmentPaxNo" ColumnName="SeqmentPaxNo" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="PaxFareTId" ColumnName="PaxFareTId" />
+          <ScalarProperty Name="BookingServiceChargeTId" ColumnName="BookingServiceChargeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BookingServiceChargeNewItem">
+      <EntityTypeMapping TypeName="POSINVModel.T_BookingServiceChargeNewItem">
+        <MappingFragment StoreEntitySet="T_BookingServiceChargeNewItem">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ForeignAmount" ColumnName="ForeignAmount" />
+          <ScalarProperty Name="ForeignCurrencyCode" ColumnName="ForeignCurrencyCode" />
+          <ScalarProperty Name="ChargeDetail" ColumnName="ChargeDetail" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="CollectType" ColumnName="CollectType" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="ServiceChargeNo" ColumnName="ServiceChargeNo" />
+          <ScalarProperty Name="SeqmentPaxNo" ColumnName="SeqmentPaxNo" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="PaxFareTId" ColumnName="PaxFareTId" />
+          <ScalarProperty Name="BookingServiceChargeTId" ColumnName="BookingServiceChargeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PassengerFee">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerFee">
+        <MappingFragment StoreEntitySet="T_PassengerFee">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="FeeCreateDate" ColumnName="FeeCreateDate" />
+          <ScalarProperty Name="PassengerFeeNo" ColumnName="PassengerFeeNo" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="PassengerTId" ColumnName="PassengerTId" />
+          <ScalarProperty Name="PassengerFeeTId" ColumnName="PassengerFeeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PassengerFeeNewItem">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerFeeNewItem">
+        <MappingFragment StoreEntitySet="T_PassengerFeeNewItem">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="FeeCreateDate" ColumnName="FeeCreateDate" />
+          <ScalarProperty Name="PassengerFeeNo" ColumnName="PassengerFeeNo" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="PassengerTId" ColumnName="PassengerTId" />
+          <ScalarProperty Name="PassengerFeeTId" ColumnName="PassengerFeeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PassengerFeeServiceCharge">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerFeeServiceCharge">
+        <MappingFragment StoreEntitySet="T_PassengerFeeServiceCharge">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ForeignAmount" ColumnName="ForeignAmount" />
+          <ScalarProperty Name="ForeignCurrencyCode" ColumnName="ForeignCurrencyCode" />
+          <ScalarProperty Name="ChargeDetail" ColumnName="ChargeDetail" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="BaseCurrencyCode" ColumnName="BaseCurrencyCode" />
+          <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="CollectType" ColumnName="CollectType" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="ServiceChargeNo" ColumnName="ServiceChargeNo" />
+          <ScalarProperty Name="FeeCreateDate" ColumnName="FeeCreateDate" />
+          <ScalarProperty Name="PassengerFeeNo" ColumnName="PassengerFeeNo" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="PassengerFeeTId" ColumnName="PassengerFeeTId" />
+          <ScalarProperty Name="PassengerFeeServiceChargeTId" ColumnName="PassengerFeeServiceChargeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PassengerFeeServiceChargeNewItem">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerFeeServiceChargeNewItem">
+        <MappingFragment StoreEntitySet="T_PassengerFeeServiceChargeNewItem">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ForeignAmount" ColumnName="ForeignAmount" />
+          <ScalarProperty Name="ForeignCurrencyCode" ColumnName="ForeignCurrencyCode" />
+          <ScalarProperty Name="ChargeDetail" ColumnName="ChargeDetail" />
+          <ScalarProperty Name="BaseAmount" ColumnName="BaseAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="BaseCurrencyCode" ColumnName="BaseCurrencyCode" />
+          <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="CollectType" ColumnName="CollectType" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="ServiceChargeNo" ColumnName="ServiceChargeNo" />
+          <ScalarProperty Name="FeeCreateDate" ColumnName="FeeCreateDate" />
+          <ScalarProperty Name="PassengerFeeNo" ColumnName="PassengerFeeNo" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="PassengerFeeTId" ColumnName="PassengerFeeTId" />
+          <ScalarProperty Name="PassengerFeeServiceChargeTId" ColumnName="PassengerFeeServiceChargeTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PassengerNewItem">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerNewItem">
+        <MappingFragment StoreEntitySet="T_PassengerNewItem">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PassengerTId" ColumnName="PassengerTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PaxFare">
+      <EntityTypeMapping TypeName="POSINVModel.T_PaxFare">
+        <MappingFragment StoreEntitySet="T_PaxFare">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+          <ScalarProperty Name="SeqmentPaxNo" ColumnName="SeqmentPaxNo" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="SegmentTId" ColumnName="SegmentTId" />
+          <ScalarProperty Name="PaxFareTId" ColumnName="PaxFareTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PaxFareNewItem">
+      <EntityTypeMapping TypeName="POSINVModel.T_PaxFareNewItem">
+        <MappingFragment StoreEntitySet="T_PaxFareNewItem">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+          <ScalarProperty Name="SeqmentPaxNo" ColumnName="SeqmentPaxNo" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="SegmentTId" ColumnName="SegmentTId" />
+          <ScalarProperty Name="PaxFareTId" ColumnName="PaxFareTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PaymentNewItem">
+      <EntityTypeMapping TypeName="POSINVModel.T_PaymentNewItem">
+        <MappingFragment StoreEntitySet="T_PaymentNewItem">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="DomainCode" ColumnName="DomainCode" />
+          <ScalarProperty Name="OrganizationCode" ColumnName="OrganizationCode" />
+          <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+          <ScalarProperty Name="ParentPaymentID" ColumnName="ParentPaymentID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="QuotedAmount" ColumnName="QuotedAmount" />
+          <ScalarProperty Name="QuotedCurrencyCode" ColumnName="QuotedCurrencyCode" />
+          <ScalarProperty Name="CollectedAmount" ColumnName="CollectedAmount" />
+          <ScalarProperty Name="CollectedCurrencyCode" ColumnName="CollectedCurrencyCode" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="PaymentMethodCode" ColumnName="PaymentMethodCode" />
+          <ScalarProperty Name="PaymentMethodType" ColumnName="PaymentMethodType" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="ReferenceType" ColumnName="ReferenceType" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PaymentTId" ColumnName="PaymentTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Segment">
+      <EntityTypeMapping TypeName="POSINVModel.T_Segment">
+        <MappingFragment StoreEntitySet="T_Segment">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+          <ScalarProperty Name="STA" ColumnName="STA" />
+          <ScalarProperty Name="STD" ColumnName="STD" />
+          <ScalarProperty Name="ArrivalStation" ColumnName="ArrivalStation" />
+          <ScalarProperty Name="DepartureStation" ColumnName="DepartureStation" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="SegmentTId" ColumnName="SegmentTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SegmentNewItem">
+      <EntityTypeMapping TypeName="POSINVModel.T_SegmentNewItem">
+        <MappingFragment StoreEntitySet="T_SegmentNewItem">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+          <ScalarProperty Name="STA" ColumnName="STA" />
+          <ScalarProperty Name="STD" ColumnName="STD" />
+          <ScalarProperty Name="ArrivalStation" ColumnName="ArrivalStation" />
+          <ScalarProperty Name="DepartureStation" ColumnName="DepartureStation" />
+          <ScalarProperty Name="SeqmentNo" ColumnName="SeqmentNo" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="SegmentTId" ColumnName="SegmentTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_WaitingForManualGenABB">
+      <EntityTypeMapping TypeName="POSINVModel.T_WaitingForManualGenABB">
+        <MappingFragment StoreEntitySet="T_WaitingForManualGenABB">
+          <ScalarProperty Name="SourceAction" ColumnName="SourceAction" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GenerateInvoiceABBOnDaily" FunctionName="POSINVModel.Store.GenerateInvoiceABBOnDaily" />
+    <FunctionImportMapping FunctionImportName="Insert_T_ABB" FunctionName="POSINVModel.Store.Insert_T_ABB" />
+    <FunctionImportMapping FunctionImportName="Insert_T_ABB_NewItem" FunctionName="POSINVModel.Store.Insert_T_ABB_NewItem" />
+    <FunctionImportMapping FunctionImportName="InsertLogABBGenerate" FunctionName="POSINVModel.Store.InsertLogABBGenerate" />
+    <FunctionImportMapping FunctionImportName="InsertManualABBGenerate" FunctionName="POSINVModel.Store.InsertManualABBGenerate" />
+    <FunctionImportMapping FunctionImportName="PrepareTableForBatchJob" FunctionName="POSINVModel.Store.PrepareTableForBatchJob" />
+    <EntitySetMapping Name="T_PassengerCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_PassengerCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_PassengerCurrentUpdate">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="PassengerId" ColumnName="PassengerId" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PassengerTId" ColumnName="PassengerTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GenerateInvoiceABBOnline" FunctionName="POSINVModel.Store.GenerateInvoiceABBOnline" />
+    <FunctionImportMapping FunctionImportName="Insert_T_ABB_Online" FunctionName="POSINVModel.Store.Insert_T_ABB_Online" />
+    <EntitySetMapping Name="M_EmpPOS">
+      <EntityTypeMapping TypeName="POSINVModel.M_EmpPOS">
+        <MappingFragment StoreEntitySet="M_EmpPOS">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="No" ColumnName="No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_SlipMessage">
+      <EntityTypeMapping TypeName="POSINVModel.M_SlipMessage">
+        <MappingFragment StoreEntitySet="M_SlipMessage">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SlipMessage_Code" ColumnName="SlipMessage_Code" />
+          <ScalarProperty Name="SlipMessage_Id" ColumnName="SlipMessage_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_SendMessage">
+      <EntityTypeMapping TypeName="POSINVModel.M_SendMessage">
+        <MappingFragment StoreEntitySet="M_SendMessage">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="DescMessage" ColumnName="DescMessage" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_AgencyType">
+      <EntityTypeMapping TypeName="POSINVModel.M_AgencyType">
+        <MappingFragment StoreEntitySet="M_AgencyType">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Last_Refund_Inv_No" ColumnName="Last_Refund_Inv_No" />
+          <ScalarProperty Name="Last_TAX_No" ColumnName="Last_TAX_No" />
+          <ScalarProperty Name="Last_Inv_No" ColumnName="Last_Inv_No" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Agent_type_Name" ColumnName="Agent_type_Name" />
+          <ScalarProperty Name="Agent_type_code" ColumnName="Agent_type_code" />
+          <ScalarProperty Name="AgencyTypeId" ColumnName="AgencyTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_VAT">
+      <EntityTypeMapping TypeName="POSINVModel.M_VAT">
+        <MappingFragment StoreEntitySet="M_VAT">
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="VAT_VALUE" ColumnName="VAT_VALUE" />
+          <ScalarProperty Name="VAT_NAME" ColumnName="VAT_NAME" />
+          <ScalarProperty Name="VAT_CODE" ColumnName="VAT_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Manual">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Manual">
+        <MappingFragment StoreEntitySet="T_Invoice_Manual">
+          <ScalarProperty Name="SlipHeader" ColumnName="SlipHeader" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CN_ID" ColumnName="CN_ID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="Document_State" ColumnName="Document_State" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="Card_no" ColumnName="Card_no" />
+          <ScalarProperty Name="Payment_type" ColumnName="Payment_type" />
+          <ScalarProperty Name="Net_balance" ColumnName="Net_balance" />
+          <ScalarProperty Name="Vat" ColumnName="Vat" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="VAT_CODE" ColumnName="VAT_CODE" />
+          <ScalarProperty Name="Update_date" ColumnName="Update_date" />
+          <ScalarProperty Name="Create_date" ColumnName="Create_date" />
+          <ScalarProperty Name="Update_by" ColumnName="Update_by" />
+          <ScalarProperty Name="Create_by" ColumnName="Create_by" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+          <ScalarProperty Name="Passenger_name" ColumnName="Passenger_name" />
+          <ScalarProperty Name="Customer_Tax_ID" ColumnName="Customer_Tax_ID" />
+          <ScalarProperty Name="Customer_address3" ColumnName="Customer_address3" />
+          <ScalarProperty Name="Customer_address2" ColumnName="Customer_address2" />
+          <ScalarProperty Name="Customer_address1" ColumnName="Customer_address1" />
+          <ScalarProperty Name="Booking_date" ColumnName="Booking_date" />
+          <ScalarProperty Name="Booking_no" ColumnName="Booking_no" />
+          <ScalarProperty Name="Booking_name" ColumnName="Booking_name" />
+          <ScalarProperty Name="Cashier_no" ColumnName="Cashier_no" />
+          <ScalarProperty Name="POS_Code" ColumnName="POS_Code" />
+          <ScalarProperty Name="Branch_Tax_ID" ColumnName="Branch_Tax_ID" />
+          <ScalarProperty Name="Branch_address3" ColumnName="Branch_address3" />
+          <ScalarProperty Name="Branch_address2" ColumnName="Branch_address2" />
+          <ScalarProperty Name="Branch_address1" ColumnName="Branch_address1" />
+          <ScalarProperty Name="Branch_name" ColumnName="Branch_name" />
+          <ScalarProperty Name="SlipMessage_Code" ColumnName="SlipMessage_Code" />
+          <ScalarProperty Name="Station_Code" ColumnName="Station_Code" />
+          <ScalarProperty Name="Receipt_date" ColumnName="Receipt_date" />
+          <ScalarProperty Name="Receipt_type" ColumnName="Receipt_type" />
+          <ScalarProperty Name="Receipt_no" ColumnName="Receipt_no" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Seq">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Seq">
+        <MappingFragment StoreEntitySet="T_Invoice_Seq">
+          <ScalarProperty Name="Last_Update_by" ColumnName="Last_Update_by" />
+          <ScalarProperty Name="Last_Modify_date" ColumnName="Last_Modify_date" />
+          <ScalarProperty Name="Last_Station_Code" ColumnName="Last_Station_Code" />
+          <ScalarProperty Name="Last_POS_Code" ColumnName="Last_POS_Code" />
+          <ScalarProperty Name="Next_Sequence" ColumnName="Next_Sequence" />
+          <ScalarProperty Name="Curr_Year" ColumnName="Curr_Year" />
+          <ScalarProperty Name="Curr_Month" ColumnName="Curr_Month" />
+          <ScalarProperty Name="Seq_Number" ColumnName="Seq_Number" />
+          <ScalarProperty Name="Last_Sequence" ColumnName="Last_Sequence" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Seq_ID" ColumnName="Seq_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Menu">
+      <EntityTypeMapping TypeName="POSINVModel.M_Menu">
+        <MappingFragment StoreEntitySet="M_Menu">
+          <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
+          <ScalarProperty Name="CanProcess" ColumnName="CanProcess" />
+          <ScalarProperty Name="CanUpdate" ColumnName="CanUpdate" />
+          <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+          <ScalarProperty Name="CanInsert" ColumnName="CanInsert" />
+          <ScalarProperty Name="CanView" ColumnName="CanView" />
+          <ScalarProperty Name="Menu_Url" ColumnName="Menu_Url" />
+          <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+          <ScalarProperty Name="Menu_Code" ColumnName="Menu_Code" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_LogAccess">
+      <EntityTypeMapping TypeName="POSINVModel.T_LogAccess">
+        <MappingFragment StoreEntitySet="T_LogAccess">
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="POS_Id" ColumnName="POS_Id" />
+          <ScalarProperty Name="Station_Id" ColumnName="Station_Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_AppSystem">
+      <EntityTypeMapping TypeName="POSINVModel.M_AppSystem">
+        <MappingFragment StoreEntitySet="M_AppSystem">
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="LockSystem" ColumnName="LockSystem" />
+          <ScalarProperty Name="HistId" ColumnName="HistId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_UserGroupMenu">
+      <EntityTypeMapping TypeName="POSINVModel.M_UserGroupMenu">
+        <MappingFragment StoreEntitySet="M_UserGroupMenu">
+          <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
+          <ScalarProperty Name="CanProcess" ColumnName="CanProcess" />
+          <ScalarProperty Name="CanUpdate" ColumnName="CanUpdate" />
+          <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+          <ScalarProperty Name="CanInsert" ColumnName="CanInsert" />
+          <ScalarProperty Name="CanView" ColumnName="CanView" />
+          <ScalarProperty Name="Menu_Code" ColumnName="Menu_Code" />
+          <ScalarProperty Name="UserGroupCode" ColumnName="UserGroupCode" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_UserPermission">
+      <EntityTypeMapping TypeName="POSINVModel.M_UserPermission">
+        <MappingFragment StoreEntitySet="M_UserPermission">
+          <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
+          <ScalarProperty Name="CanProcess" ColumnName="CanProcess" />
+          <ScalarProperty Name="CanUpdate" ColumnName="CanUpdate" />
+          <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+          <ScalarProperty Name="CanInsert" ColumnName="CanInsert" />
+          <ScalarProperty Name="CanView" ColumnName="CanView" />
+          <ScalarProperty Name="Menu_Code" ColumnName="Menu_Code" />
+          <ScalarProperty Name="UserGroupCode" ColumnName="UserGroupCode" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_CN">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_CN">
+        <MappingFragment StoreEntitySet="T_Invoice_CN">
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="CNReason_Code" ColumnName="CNReason_Code" />
+          <ScalarProperty Name="CNReason_Id" ColumnName="CNReason_Id" />
+          <ScalarProperty Name="CN_NO" ColumnName="CN_NO" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="INV_No" ColumnName="INV_No" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="CN_ID" ColumnName="CN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_LogBookingCurrentUpdate">
+      <EntityTypeMapping TypeName="POSINVModel.T_LogBookingCurrentUpdate">
+        <MappingFragment StoreEntitySet="T_LogBookingCurrentUpdate">
+          <ScalarProperty Name="ValueNew" ColumnName="ValueNew" />
+          <ScalarProperty Name="ValueOld" ColumnName="ValueOld" />
+          <ScalarProperty Name="ColName" ColumnName="ColName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="ABBNo" ColumnName="ABBNo" />
+          <ScalarProperty Name="INV_No" ColumnName="INV_No" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Employee">
+      <EntityTypeMapping TypeName="POSINVModel.M_Employee">
+        <MappingFragment StoreEntitySet="M_Employee">
+          <ScalarProperty Name="IsUserAD" ColumnName="IsUserAD" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="LastLogIn_Date" ColumnName="LastLogIn_Date" />
+          <ScalarProperty Name="IP_Address" ColumnName="IP_Address" />
+          <ScalarProperty Name="Last_POS_ID" ColumnName="Last_POS_ID" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="DefaultMenu" ColumnName="DefaultMenu" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="Station_Code" ColumnName="Station_Code" />
+          <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Flight">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Flight">
+        <MappingFragment StoreEntitySet="T_Invoice_Flight">
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+          <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+          <ScalarProperty Name="ArrivalStation" ColumnName="ArrivalStation" />
+          <ScalarProperty Name="DepartureStation" ColumnName="DepartureStation" />
+          <ScalarProperty Name="ArraivalDate" ColumnName="ArraivalDate" />
+          <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+          <ScalarProperty Name="INV_ID" ColumnName="INV_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Detail">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Detail">
+        <MappingFragment StoreEntitySet="T_Invoice_Detail">
+          <ScalarProperty Name="AmountTH" ColumnName="AmountTH" />
+          <ScalarProperty Name="UnitQTY" ColumnName="UnitQTY" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="Flight_Fee_Name" ColumnName="Flight_Fee_Name" />
+          <ScalarProperty Name="Flight_Fee_Code" ColumnName="Flight_Fee_Code" />
+          <ScalarProperty Name="Receipt_no" ColumnName="Receipt_no" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_ABB">
+      <EntityTypeMapping TypeName="POSINVModel.T_ABB">
+        <MappingFragment StoreEntitySet="T_ABB">
+          <ScalarProperty Name="Discount_Ori" ColumnName="Discount_Ori" />
+          <ScalarProperty Name="TOTAL_Ori" ColumnName="TOTAL_Ori" />
+          <ScalarProperty Name="REP_Ori" ColumnName="REP_Ori" />
+          <ScalarProperty Name="INSURANCE_Ori" ColumnName="INSURANCE_Ori" />
+          <ScalarProperty Name="AIRPORTTAX_Ori" ColumnName="AIRPORTTAX_Ori" />
+          <ScalarProperty Name="VAT_Ori" ColumnName="VAT_Ori" />
+          <ScalarProperty Name="OTHER_Ori" ColumnName="OTHER_Ori" />
+          <ScalarProperty Name="Service_Ori" ColumnName="Service_Ori" />
+          <ScalarProperty Name="Fuel_Ori" ColumnName="Fuel_Ori" />
+          <ScalarProperty Name="ADMINFEE_Ori" ColumnName="ADMINFEE_Ori" />
+          <ScalarProperty Name="Passenger_Name" ColumnName="Passenger_Name" />
+          <ScalarProperty Name="Flight_Desc" ColumnName="Flight_Desc" />
+          <ScalarProperty Name="Flight_Code" ColumnName="Flight_Code" />
+          <ScalarProperty Name="POS_Id" ColumnName="POS_Id" />
+          <ScalarProperty Name="INV_ID" ColumnName="INV_ID" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="STATUS_INV" ColumnName="STATUS_INV" />
+          <ScalarProperty Name="PrintCount" ColumnName="PrintCount" />
+          <ScalarProperty Name="ExchangeRateTH" ColumnName="ExchangeRateTH" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="REP" ColumnName="REP" />
+          <ScalarProperty Name="INSURANCE" ColumnName="INSURANCE" />
+          <ScalarProperty Name="AIRPORTTAX" ColumnName="AIRPORTTAX" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="OTHER" ColumnName="OTHER" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+          <ScalarProperty Name="ADMINFEE" ColumnName="ADMINFEE" />
+          <ScalarProperty Name="PAXCountCHD" ColumnName="PAXCountCHD" />
+          <ScalarProperty Name="PAXCountADT" ColumnName="PAXCountADT" />
+          <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+          <ScalarProperty Name="PNR_No" ColumnName="PNR_No" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="ABBTid" ColumnName="ABBTid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Fare">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Fare">
+        <MappingFragment StoreEntitySet="T_Invoice_Fare">
+          <ScalarProperty Name="Flight_ID" ColumnName="Flight_ID" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="TotalTH" ColumnName="TotalTH" />
+          <ScalarProperty Name="AmountTH" ColumnName="AmountTH" />
+          <ScalarProperty Name="DiscountTH" ColumnName="DiscountTH" />
+          <ScalarProperty Name="ExchangeRateTH" ColumnName="ExchangeRateTH" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="Pax_Type" ColumnName="Pax_Type" />
+          <ScalarProperty Name="INV_ID" ColumnName="INV_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Fee">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Fee">
+        <MappingFragment StoreEntitySet="T_Invoice_Fee">
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="AmountTH" ColumnName="AmountTH" />
+          <ScalarProperty Name="DiscountTH" ColumnName="DiscountTH" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ExchangeRateTH" ColumnName="ExchangeRateTH" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ChargeCode" ColumnName="ChargeCode" />
+          <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+          <ScalarProperty Name="INV_ID" ColumnName="INV_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Payment">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Payment">
+        <MappingFragment StoreEntitySet="T_Invoice_Payment">
+          <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+          <ScalarProperty Name="ApprovalDate" ColumnName="ApprovalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="PaymentAmount_Ori" ColumnName="PaymentAmount_Ori" />
+          <ScalarProperty Name="ExchangeRateTH" ColumnName="ExchangeRateTH" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="PaymentType_Name" ColumnName="PaymentType_Name" />
+          <ScalarProperty Name="PaymentMethodCode" ColumnName="PaymentMethodCode" />
+          <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+          <ScalarProperty Name="INV_ID" ColumnName="INV_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_FlightFeeGroup">
+      <EntityTypeMapping TypeName="POSINVModel.M_FlightFeeGroup">
+        <MappingFragment StoreEntitySet="M_FlightFeeGroup">
+          <ScalarProperty Name="DescriptionEN" ColumnName="DescriptionEN" />
+          <ScalarProperty Name="DescriptionTH" ColumnName="DescriptionTH" />
+          <ScalarProperty Name="NameEN" ColumnName="NameEN" />
+          <ScalarProperty Name="NameTH" ColumnName="NameTH" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Customer">
+      <EntityTypeMapping TypeName="POSINVModel.M_Customer">
+        <MappingFragment StoreEntitySet="M_Customer">
+          <ScalarProperty Name="Branch_No" ColumnName="Branch_No" />
+          <ScalarProperty Name="Addr_5" ColumnName="Addr_5" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Addr_4" ColumnName="Addr_4" />
+          <ScalarProperty Name="last_upd_by" ColumnName="last_upd_by" />
+          <ScalarProperty Name="last_upd_dt" ColumnName="last_upd_dt" />
+          <ScalarProperty Name="crtd_by" ColumnName="crtd_by" />
+          <ScalarProperty Name="crtd_dt" ColumnName="crtd_dt" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Home_Phone" ColumnName="Home_Phone" />
+          <ScalarProperty Name="Zip_Code" ColumnName="Zip_Code" />
+          <ScalarProperty Name="Cntr_Code" ColumnName="Cntr_Code" />
+          <ScalarProperty Name="Prvn_Code" ColumnName="Prvn_Code" />
+          <ScalarProperty Name="Addr_3" ColumnName="Addr_3" />
+          <ScalarProperty Name="Addr_2" ColumnName="Addr_2" />
+          <ScalarProperty Name="Addr_1" ColumnName="Addr_1" />
+          <ScalarProperty Name="gndr_code" ColumnName="gndr_code" />
+          <ScalarProperty Name="prfx_name" ColumnName="prfx_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Invoice_Info">
+      <EntityTypeMapping TypeName="POSINVModel.T_Invoice_Info">
+        <MappingFragment StoreEntitySet="T_Invoice_Info">
+          <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+          <ScalarProperty Name="TOTAL_Ori" ColumnName="TOTAL_Ori" />
+          <ScalarProperty Name="Discount_Ori" ColumnName="Discount_Ori" />
+          <ScalarProperty Name="REP_Ori" ColumnName="REP_Ori" />
+          <ScalarProperty Name="INSURANCE_Ori" ColumnName="INSURANCE_Ori" />
+          <ScalarProperty Name="AIRPORTTAX_Ori" ColumnName="AIRPORTTAX_Ori" />
+          <ScalarProperty Name="VAT_Ori" ColumnName="VAT_Ori" />
+          <ScalarProperty Name="OTHER_Ori" ColumnName="OTHER_Ori" />
+          <ScalarProperty Name="Service_Ori" ColumnName="Service_Ori" />
+          <ScalarProperty Name="Fuel_Ori" ColumnName="Fuel_Ori" />
+          <ScalarProperty Name="ADMINFEE_Ori" ColumnName="ADMINFEE_Ori" />
+          <ScalarProperty Name="ExchangeRateTH" ColumnName="ExchangeRateTH" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="REP" ColumnName="REP" />
+          <ScalarProperty Name="INSURANCE" ColumnName="INSURANCE" />
+          <ScalarProperty Name="AIRPORTTAX" ColumnName="AIRPORTTAX" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="OTHER" ColumnName="OTHER" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+          <ScalarProperty Name="ADMINFEE" ColumnName="ADMINFEE" />
+          <ScalarProperty Name="PAXCountCHD" ColumnName="PAXCountCHD" />
+          <ScalarProperty Name="PAXCountADT" ColumnName="PAXCountADT" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ABB_NO" ColumnName="ABB_NO" />
+          <ScalarProperty Name="INV_ID" ColumnName="INV_ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OR_Reason" ColumnName="OR_Reason" />
+          <ScalarProperty Name="Cancel_Date" ColumnName="Cancel_Date" />
+          <ScalarProperty Name="IsCancel" ColumnName="IsCancel" />
+          <ScalarProperty Name="CN_ID" ColumnName="CN_ID" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="SlipMessage_Code" ColumnName="SlipMessage_Code" />
+          <ScalarProperty Name="POS_Code" ColumnName="POS_Code" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="UpDate_By" ColumnName="UpDate_By" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="VatType" ColumnName="VatType" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="INVType" ColumnName="INVType" />
+          <ScalarProperty Name="Cheque_Date" ColumnName="Cheque_Date" />
+          <ScalarProperty Name="Cheque_No" ColumnName="Cheque_No" />
+          <ScalarProperty Name="AcountNo" ColumnName="AcountNo" />
+          <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="PayType" ColumnName="PayType" />
+          <ScalarProperty Name="Booking_Date" ColumnName="Booking_Date" />
+          <ScalarProperty Name="Booking_No" ColumnName="Booking_No" />
+          <ScalarProperty Name="Receipt_Date" ColumnName="Receipt_Date" />
+          <ScalarProperty Name="Receipt_By" ColumnName="Receipt_By" />
+          <ScalarProperty Name="INVDate" ColumnName="INVDate" />
+          <ScalarProperty Name="Ref_INV_No" ColumnName="Ref_INV_No" />
+          <ScalarProperty Name="INV_No" ColumnName="INV_No" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_UserGroupMappingAD">
+      <EntityTypeMapping TypeName="POSINVModel.M_UserGroupMappingAD">
+        <MappingFragment StoreEntitySet="M_UserGroupMappingAD">
+          <ScalarProperty Name="AD_Department" ColumnName="AD_Department" />
+          <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_UserGroup">
+      <EntityTypeMapping TypeName="POSINVModel.M_UserGroup">
+        <MappingFragment StoreEntitySet="M_UserGroup">
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Update_By" ColumnName="Update_By" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserGroupName" ColumnName="UserGroupName" />
+          <ScalarProperty Name="UserGroupCode" ColumnName="UserGroupCode" />
+          <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

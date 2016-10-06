@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CreateInvoiceSystem.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CreateInvoiceSystem_com_airasia_acesession_SessionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://acesession.airasia.com/ACE/SessionService.svc</Value>
+    </Setting>
+    <Setting Name="CreateInvoiceSystem_com_airasia_acebooking_BookingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://acebooking.airasia.com/ACE/BookingService.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
